@@ -1,0 +1,83 @@
+#+TITLE: Svetlobni termometer
+#+SUBTITLE: Delavnice Raspberry Pi
+#+AUTHOR: Gregor Nemec
+#+SETUPFILE: ~/Git/org-html-themes/setup/theme-readtheorg.setup
+#+DATE: 19. 8. 2017
+#+SETUPFILE: ~/Git/org-html-themes/setup/theme-readtheorg.setup
+#+OPTIONS: LaTeX:t
+#+OPTIONS: tex:dvipng
+#+OPTIONS: toc:nil 
+#+LANGUAGE: sl
+#+LaTeX_CLASS: article
+#+LaTeX_HEADER: \usepackage[]{babel}
+#+LaTeX_HEADER: \usepackage[a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+#+LaTeX_HEADER: \setlength{\parindent}{0cm}
+
+
+* Svetlobni termometer
+
+  *Osnovni podatki*
+  * *Ustanova*: Osnovna šola Puconci
+  * *Šolsko leto*: 2016/17
+  * *Datum nastopa*: 
+  * *Ura*: 
+  * *Predmet*: Delavnica Raspberry - Pi
+  * *Razred*:
+  * *Učitelj*: Gregor Nemec
+  * *Vzgojno izobraževalna tema*: 
+  * *Vzgojno izobraževalna enota*:  
+
+  *Podatki o uri*
+  * *Tip učne ure*: Pridobivanje nove učne snovi
+  * *Vzgojno-izobraževalne oNajleblike*: Frontalno, delo v skupinah in samostojno delo učencev.
+  * *Vzgojno-izobraževalne metode*: metoda ustnega razlaganja, razgovora,
+    demonstracije, metoda dela s tekstom, metoda praktičnih del, vodeno
+    praktično delo po delih.
+  
+  * *Učni in tehnični pripomočki* (navoljo je 5 kompletov): Računalniki
+    Raspberry Pi 3b, vezna plošča, LED diode (10x), termistor, AD pretvornik,
+    monitor, tipkovnica, miška.
+
+  * *Organizacija skupin*: 5 kompletov pomeni maksimalno 10 učencev po dva v
+    skupini. 
+
+  *Operativni vzgojno-izobraževalni cilji:*
+  
+  Učenci: 
+  * 
+ 
+ 
+  *Viri in literatura*   
+       
+  *Opomba*: Učna priprava -> Potek dela!
+  
+** Uvod
+
+** Ponovitev o zemlji in demonstracija poteka dela.
+
+   * Učitelj | /e-tabla - Diapozitiv 1: Gibanje zemlje/ | :: Učitelj daje
+        navodila učencem in jih vodi skozi potek dela po delih.
+    
+   * Učence  | /Diapozitiv 1: Gibanje zemlje/  | :: Prebere prvo vprašanje
+        diapozitiva. 
+     * *Kateri sta osnovni gibanji zemlje?*
+
+** Ponavljanje in utrjevanje (samostojno delo učencev po skupinah)
+** Predstavitev odgovorov po skupinah
+   
+   * Učitelj | /e-tabla/ | :: V načinu predstavitve odpre dokument Google
+        predstavitev posamezne skupine. 
+   * Učenci | /e-tabla/ | :: Predstavitev poteka frontalno učenci iz posamezne
+        skupine pridejo pred tablo in predstavijo odgovore na vprašanja.
+   * Učitelj :: Učitelj vodi razgovor, usmerja učence jim postavlja pod
+                vprašanja in nudi dodatno razlago. Učence opozarja na pravilno
+                izražanje in jim daje nasvete za uspešno predstavitev, kot je
+                kazanje skic oz. slik ob sami razlagi odgovora, razločno
+                izgovorjavo in tako dalje. Učitelj deli v skupno rabo celoten
+                dokument z učenci in jim tako omogoča, da imajo vsi pravilno
+                rešene odgovore, ki jih lahko uporabijo za učenje.    
+   
+** Analiza uresničitve
+** Priloge
+
+
