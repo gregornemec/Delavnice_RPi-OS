@@ -14,8 +14,6 @@
 #+LaTeX_HEADER: \setlength{\parindent}{0cm}
 
 
-* TODO Svetlobni termometer
-
   *Osnovni podatki*
   * *Ustanova*: Osnovna šola Puconci
   * *Šolsko leto*: 2016/17
@@ -51,7 +49,7 @@
        
   *Opomba*: Učna priprava -> Potek dela!
   
-** Uvod
+* Uvod
    
    
 
