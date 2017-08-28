@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import os
 import ADC0832
-import multiLED
+#import multiLED
 import RPi.GPIO as GPIO
 import time
 import math
@@ -10,7 +10,7 @@ import math
 def init():
     GPIO.setmode(GPIO.BOARD)        # Numbers GPIOs by physical location
     ADC0832.setup()
-    multiLED.setup()
+    #multiLED.setup()
 
 
 def temp_calibretion():
@@ -33,29 +33,29 @@ def loop():
         print("data:", dat)
         print("res:", dat*39)
 
-        if temp_c >= 20 and temp_c < 21:
-            multiLED.listLedOnOff([1, 0, 0, 0, 0, 0, 0, 0, 0, 0])
-        elif temp_c >= 21 and temp_c < 22:
-            multiLED.listLedOnOff([1, 1, 0, 0, 0, 0, 0, 0, 0, 0])
-        elif temp_c >= 22 and temp_c < 23:
-            multiLED.listLedOnOff([1, 1, 1, 0, 0, 0, 0, 0, 0, 0])
-        elif temp_c >= 23 and temp_c < 24:
-            multiLED.listLedOnOff([1, 1, 1, 1, 0, 0, 0, 0, 0, 0])
-        elif temp_c >= 24 and temp_c < 25:
-            multiLED.listLedOnOff([1, 1, 1, 1, 1, 0, 0, 0, 0, 0])
-        elif temp_c >= 25 and temp_c < 26:
-            multiLED.listLedOnOff([1, 1, 1, 1, 1, 1, 0, 0, 0, 0])
-        elif temp_c >= 26 and temp_c < 27:
-            multiLED.listLedOnOff([1, 1, 1, 1, 1, 1, 1, 0, 0, 0])
-        elif temp_c >= 27 and temp_c < 28:
-            multiLED.listLedOnOff([1, 1, 1, 1, 1, 1, 1, 1, 0, 0])
-        elif temp_c >= 28 and temp_c < 29:
-            multiLED.listLedOnOff([1, 1, 1, 1, 1, 1, 1, 1, 1, 0])
-        elif temp_c >= 29 and temp_c < 30:
-            multiLED.listLedOnOff([1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
-        else:
-            multiLED.listLedOnOff([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
-        #allOn()
+        # if temp_c >= 20 and temp_c < 21:
+        #     multiLED.listLedOnOff([1, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+        # elif temp_c >= 21 and temp_c < 22:
+        #     multiLED.listLedOnOff([1, 1, 0, 0, 0, 0, 0, 0, 0, 0])
+        # elif temp_c >= 22 and temp_c < 23:
+        #     multiLED.listLedOnOff([1, 1, 1, 0, 0, 0, 0, 0, 0, 0])
+        # elif temp_c >= 23 and temp_c < 24:
+        #     multiLED.listLedOnOff([1, 1, 1, 1, 0, 0, 0, 0, 0, 0])
+        # elif temp_c >= 24 and temp_c < 25:
+        #     multiLED.listLedOnOff([1, 1, 1, 1, 1, 0, 0, 0, 0, 0])
+        # elif temp_c >= 25 and temp_c < 26:
+        #     multiLED.listLedOnOff([1, 1, 1, 1, 1, 1, 0, 0, 0, 0])
+        # elif temp_c >= 26 and temp_c < 27:
+        #     multiLED.listLedOnOff([1, 1, 1, 1, 1, 1, 1, 0, 0, 0])
+        # elif temp_c >= 27 and temp_c < 28:
+        #     multiLED.listLedOnOff([1, 1, 1, 1, 1, 1, 1, 1, 0, 0])
+        # elif temp_c >= 28 and temp_c < 29:
+        #     multiLED.listLedOnOff([1, 1, 1, 1, 1, 1, 1, 1, 1, 0])
+        # elif temp_c >= 29 and temp_c < 30:
+        #     multiLED.listLedOnOff([1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+        # else:
+        #     multiLED.listLedOnOff([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+        # #allOn()
 
         time.sleep(0.5)
 
@@ -64,7 +64,7 @@ if __name__ == '__main__':
     try:
         loop()
     except KeyboardInterrupt:
-        #ADC0832.destroy()
-        multiLED.destroy()
+        ADC0832.destroy()
+        #multiLED.destroy()     
         #ADC0832.destroy()
         print("The end !")

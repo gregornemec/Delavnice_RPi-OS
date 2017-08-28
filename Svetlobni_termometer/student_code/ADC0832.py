@@ -2,9 +2,9 @@
 import RPi.GPIO as GPIO
 import time
 
-ADC_CS  = 11
-ADC_CLK = 12
-ADC_DIO = 13
+ADC_CS  = 40 #Green
+ADC_CLK = 38 #Orange
+ADC_DIO = 37 #Purple
 
 def setup():
     GPIO.setwarnings(False)
