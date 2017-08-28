@@ -50,6 +50,38 @@
   *Opomba*: Učna priprava -> Potek dela!
   
 * Uvod
-   
+  
+* Priklop Raspberry Pi
+  Raspberry Pi priklopimo na:
+
+  * monitor,
+  * miško (USB),
+  * tipkovnico (USB),
+  * omrežje (RJ-45).
+
+* Spoznajmo se z Raspberry Pi 
+  * Menijska vrstica,
+  * spustni meni s programi,
+  * raziskovalec datotek,
+  * ukazna vrstica.
+
+* Vmesnik GPIO 
+
+
+* Priklop led diode
+
+
+* Priklop večih led diod
+
+* Program za upravljanje z večimi LED
+
+* 
+
+
+
+
+
+
+
    
 
