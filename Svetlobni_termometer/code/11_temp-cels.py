@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+
+bb#!/usr/bin/env python
 import ADC0832
 import time
 import math
@@ -10,11 +11,13 @@ def temp_calibretion():
     temp1 = 22.0
     res1 = 120.0
 
-    temp2 = 28.5
-    res2 = 156.0
+    temp2 = 25
+    res2 = 138.0
 
     #k = (temp2 - temp1)/(res2 - res1)
     k = temp1/res1
+    #k = temp2/res2
+    
     return k
 
 def loop():
