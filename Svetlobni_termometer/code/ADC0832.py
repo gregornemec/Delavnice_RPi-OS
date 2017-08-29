@@ -2,9 +2,9 @@
 import RPi.GPIO as GPIO
 import time
 
-ADC_CS  = 11
-ADC_CLK = 12
-ADC_DIO = 13
+ADC_CS  = 40 #Green
+ADC_CLK = 38 #Orange
+ADC_DIO = 37 #Purple
 
 def setup():
     GPIO.setwarnings(False)
@@ -59,15 +59,35 @@ def getResult():     # get ADC result
     else:
         return 0
 
-def loop():
-    while True:
-        res = getResult()
-        print("res:", res)
-        time.sleep(0.4)
+#Uporabi to funkcijo za pridobitev podatkov o temperaturi. 
+def getTempResult():
+    '''
+    Funkcija pridobi podatke AD pretvornika in jih spremeni v stopinje celzija.
 
-if __name__ == '__main__':
-    setup()
-    try:
-        loop()
-    except KeyboardInterrupt:
-        destroy()
+    ToDO: Potrebna je boljša pretvorba v temperaturo, saj dejansko funkcija ni linearna. 
+    '''
+    temp1 = 22.0
+    res1 = 120.0
+
+    temp2 = 24
+    res2 = 140.0
+
+    k = temp2/res2
+
+    return round(k*getResult(),2)
+
+
+
+
+# def loop():
+#     while True:
+#         res = getResult()
+#         print("res:", res)
+#         time.sleep(0.4)
+
+# if __name__ == '__main__':
+#     setup()
+#     try:
+#         loop()
+#     except KeyboardInterrupt:
+#         destroy()

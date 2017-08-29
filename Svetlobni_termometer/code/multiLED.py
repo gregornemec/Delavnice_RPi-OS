@@ -1,10 +1,16 @@
 import RPi.GPIO as GPIO
 import time
 
-pins = [18, 22, 32, 31, 36, 33, 16, 37, 38, 40]
+#V seznam z stevilkami vnesemo priklopljene led diode.
+
+pins = [3, 5, 7, 8]
 
 
 def setup():
+    '''
+    Začente nastavitve.
+    '''
+
     GPIO.setmode(GPIO.BOARD)        # Numbers GPIOs by physical location
     for pin in pins:
         GPIO.setup(pin, GPIO.OUT)   # Set all pins' mode is output
@@ -18,15 +24,30 @@ def setup():
 #     GPIO.output(pin, GPIO.HIGH)
 #     print(" ... led off", pin)
 
+
 def singleLedOn(ledN):
+    '''
+    Prižgemo LED na številki (zacetek: 0)
+    '''
+    
     GPIO.output(pins[ledN], GPIO.LOW)
-    #print(" ... led on", pin)
+    #print(" ... led on", ledN)
+
 
 def singleLedOff(ledN):
+    '''
+    Ugasnemo LED na številki (zacetek: 0)
+    '''
+
     GPIO.output(pins[ledN], GPIO.HIGH)
-    #print(" ... led off", pin)
+    #print(" ... led off", ledN)
+
 
 def singleLedBlink(ledN):
+    '''
+    Utripanje LED na vneseni stevilki (zacetek: 0)
+    '''
+
     singleLedOn(ledN)
     time.sleep(0.2)
     singleLedOff(pin)
@@ -34,12 +55,19 @@ def singleLedBlink(ledN):
     
     print(" ... led blink", ledN)
 
+
 def allOn():
+    '''
+    Prizge vse lucke.
+    '''
     print ("... all on")
     for ledN, pin in enumerate(pins):
         singleLedOn(ledN)
 
 def allOff():
+    '''
+    Ugasne vse lucke.
+    '''
     print ("all off ...")
     for ledN, pin in enumerate(pins):
         print(ledN, "|", pin)
@@ -47,17 +75,27 @@ def allOff():
     
 
 def allBlink():
+    '''
+    Vse lucke utripajo
+    '''
     allOn()
     time.sleep(0.2)
     allOff()
     time.sleep(0.2)
 
 def tripleBlink():
+    '''
+    Trojni utrip luck.
+    '''
     for i in range(0,3):
         time.sleep(0.2)
         allBlink()
 
 def flowLed():
+    '''
+    Putojoca lucka.
+    '''
+    
     print ("... flow LED ...")
     allOff()
     for ledN, pin in enumerate(pins):
@@ -66,7 +104,13 @@ def flowLed():
         singleLedOff(ledN)
 
 def listLedOnOff(switches):
-    '''swiches is a bit list [1, 1, 1, 0, 0, 0]. Each bit in turns on (1) or turns of (0) led light in a row.
+    '''
+    SI: Funkcija sprejeme seznam swiches vrednosti 0 in 1. Vrednost 0 pomeni,
+    da je LED ugasnjena in 1 da je LED prizgane. Torej nam 0 oz. 1 v seznamu
+    pove ali je LED na mestu v seznamu prizgana ali ugasnjena.
+
+    ENG: swiches is a bit list [1, 1, 1, 0, 0,
+    0]. Each bit in turns on (1) or turns of (0) led light in a row.
 
     '''
 
@@ -85,6 +129,9 @@ def listLedOnOff(switches):
 
 
 def destroy():
+    '''
+    Pocisti vse vire. 
+    '''
     allOff()
     GPIO.cleanup()                     # Release resource
 
