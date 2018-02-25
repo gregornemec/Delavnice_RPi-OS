@@ -67,15 +67,13 @@
 
 * Vmesnik GPIO 
 
-
 * Priklop led diode
-
-
 * Priklop večih led diod
 
 * Program za upravljanje z večimi LED
 
-* 
+* Priklop termistorja 
+* Program 
 
 
 
