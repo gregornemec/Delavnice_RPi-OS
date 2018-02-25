@@ -1,17 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-
-
-
-
-
 import RPi.GPIO as GPIO
 import time
 
 #V seznam z stevilkami vnesemo priklopljene led diode.
 
-pins = [3, 5, 7, 8]
+pins = [7, 11, 12, 13, 15, 16, 18, 22, 29, 31]
 
 
 def setup():
