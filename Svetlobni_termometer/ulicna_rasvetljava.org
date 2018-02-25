@@ -1,5 +1,5 @@
-#+TITLE: Utripajoča LED
-#+DATE: 25.02.2018
+#+TITLE: Ulicna rasvetljava
+#+DATE: 27,02.2018
 #+AUTHOR: Gregor Nemec
 #+SETUPFILE: ~/Git/org-html-themes/setup/theme-readtheorg.setup
 #+SETUPFILE: ~/Git/org-html-themes/setup/theme-readtheorg.setup
@@ -13,3 +13,15 @@
 #+LaTeX_HEADER: \usepackage[a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
 #+LaTeX_HEADER: \setlength{\parindent}{0cm}
 
+* Naloga
+  Učinkovita ulična razsvetljava deluje tako, da se prižge ko stopnja svetlosti
+  pade pod neko mejo. 
+  
+
+* Pripomočki
+
+* Vezje
+
+* Program
+
+* Vprašanja
