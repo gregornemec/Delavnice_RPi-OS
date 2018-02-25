@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+
+
+
+
+
 import RPi.GPIO as GPIO
 import time
 
@@ -8,7 +16,7 @@ pins = [3, 5, 7, 8]
 
 def setup():
     '''
-    Začente nastavitve.
+    Zacente nastavitve.
     '''
 
     GPIO.setmode(GPIO.BOARD)        # Numbers GPIOs by physical location
@@ -27,7 +35,7 @@ def setup():
 
 def singleLedOn(ledN):
     '''
-    Prižgemo LED na številki (zacetek: 0)
+    Prizgemo LED na številki (zacetek: 0)
     '''
     
     GPIO.output(pins[ledN], GPIO.LOW)
