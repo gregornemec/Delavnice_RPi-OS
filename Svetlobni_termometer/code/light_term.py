@@ -63,6 +63,11 @@ if __name__ == '__main__':
     init()
     try:
         loop()
+        # while True:
+        #     multiLED.listLedOnOff([1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+        #     time.sleep(0.5)
+        #     multiLED.listLedOnOff([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+        #     time.sleep(0.5)
     except KeyboardInterrupt:
         #ADC0832.destroy()
         multiLED.destroy()
