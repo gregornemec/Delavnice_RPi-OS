@@ -25,7 +25,6 @@ def loop():
         # Sem zapiši programsko kodo
         multiLED.flowLed()
         
-
         #temp_c = ADC0832.getTempResult()
         #print(temp_c)
         # if temp_c >= 20 and temp_c < 21:

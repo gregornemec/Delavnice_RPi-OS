@@ -64,7 +64,7 @@ def getTempResult():
     '''
     Funkcija pridobi podatke AD pretvornika in jih spremeni v stopinje celzija.
 
-    ToDO: Potrebna je boljša pretvorba v temperaturo, saj dejansko funkcija ni linearna. 
+    ToDO: Potrebna je boljsa pretvorba v temperaturo, saj dejansko funkcija ni linearna. 
     '''
     temp1 = 22.0
     res1 = 120.0
@@ -75,9 +75,6 @@ def getTempResult():
     k = temp2/res2
 
     return round(k*getResult(),2)
-
-
-
 
 # def loop():
 #     while True:
