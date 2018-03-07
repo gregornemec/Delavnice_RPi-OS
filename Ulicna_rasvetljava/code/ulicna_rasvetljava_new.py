@@ -25,11 +25,11 @@ if __name__ == '__main__':
         p7 = GPIO.PWM(7, 25)
         p11 = GPIO.PWM(11, 50)
         p12 = GPIO.PWM(12, 75)
-        
+
         p7.start(1)
         p11.start(1)
         p12.start(1)
-        
+
         while True:
             dat = ADC0832.getResult()
             light = round((Decimal(dat)/255)*100, 2)
@@ -40,13 +40,13 @@ if __name__ == '__main__':
             p7.ChangeDutyCycle(light)
             p11.ChangeDutyCycle(light)
             p12.ChangeDutyCycle(light)
-            
+
             time.sleep(0.2)
 
     except KeyboardInterrupt:
         p7.stop()
         p11.stop()
         p12.stop()
-        
+
         GPIO.cleanup()
         print("The end !")
