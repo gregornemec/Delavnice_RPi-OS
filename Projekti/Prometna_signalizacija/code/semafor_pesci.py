@@ -5,6 +5,7 @@ import gpiozero
 import time
 
 led = gpiozero.LED(27)
+led_zelena = gpiozero.LED()
 
 while True:
     led.on()
@@ -13,6 +14,7 @@ while True:
     led.off()
     print("LED off")
     time.sleep(1)
+    
 
 
 

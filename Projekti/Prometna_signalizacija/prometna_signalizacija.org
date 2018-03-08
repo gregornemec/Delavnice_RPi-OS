@@ -51,6 +51,8 @@
    Pri tej nalogi bomo spoznali kako priklopimo eno LED diodo v vezje in jo
    krmilimo tako, da bo ta utripala. 
 
+   
+
 ** Semafor za pešce (2x led zaporedno)
 
 ** Semafor za avtomobile (3x led zaporedno)
