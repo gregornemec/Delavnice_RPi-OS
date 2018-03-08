@@ -1,0 +1,68 @@
+#+TITLE: Prometna signalizacija
+#+DATE: 07.03.2018
+#+AUTHOR: Gregor Nemec
+#+SETUPFILE: ~/Git/org-html-themes/setup/theme-readtheorg.setup
+#+SETUPFILE: ~/Git/org-html-themes/setup/theme-readtheorg.setup
+#+bind: org-export-publishing-directory "./exports"
+#+OPTIONS: LaTeX:t
+#+OPTIONS: tex:dvipng
+#+OPTIONS: toc:nil 
+#+LANGUAGE: sl
+#+LaTeX_CLASS: article
+#+LaTeX_HEADER: \usepackage[]{babel}
+#+LaTeX_HEADER: \usepackage[a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+#+LaTeX_HEADER: \setlength{\parindent}{0cm}
+
+* Naloga
+  Naš končni cilj je prehod za pešce za slepe in slabovidne. 
+
+* Sestavine
+  * 1x prototipna plošča
+  * 1x razširitev in podaljševalni kapel GPIO pinov
+  * 
+
+* Shema
+
+* Vezje
+
+* Koraki izdelave
+
+** Priklop Raspbery-Pi
+
+** Spoznavanje Pixle in IDLE
+** Spoznavanje elektrotehničnih elementov
+   
+*** Prototipna ploščica
+
+*** Upornik 
+
+*** LED dioda
+
+*** Stikalo
+
+*** Piskač
+
+** Priklop razširitvenega priklopa na prototipno ploščico in R-Piska
+   Pred sabo imaš prototipno ploščico in na njo vključen razširitveni priklop.
+   Ta nam omogoča samo podaljšek, tako do posameznih pinov GPIO pridemo
+   neposredno na prototipni ploščici, kar nam omogoča nekoliko lažje delo.
+
+** Utripajoča led (1x)
+   Pri tej nalogi bomo spoznali kako priklopimo eno LED diodo v vezje in jo
+   krmilimo tako, da bo ta utripala. 
+
+** Semafor za pešce (2x led zaporedno)
+
+** Semafor za avtomobile (3x led zaporedno)
+
+** Priklop stikala
+
+** Priklop piskača
+
+* Programska koda
+  * Končni program:
+  * Program za učence: 
+
+* Viri in Literatura
+  1. Gregor Anželj, *Prometna signalizacija*, 
+     https://anzeljg.github.io/rpi/rpi/3201/index.html
