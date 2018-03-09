@@ -14,22 +14,34 @@
 #+LaTeX_HEADER: \setlength{\parindent}{0cm}
 
 * Naloga
-  Naš končni cilj je prehod za pešce za slepe in slabovidne. 
+  S signalizacijo v prometu se srečujemo vsak dan. Naš končni cilj je prehod za
+  pešce za slepe in slabovidne.
 
 * Sestavine
-  * 1x prototipna plošča
-  * 1x razširitev in podaljševalni kapel GPIO pinov
-  * 
-
-* Shema
+  Pri projektu bomo potrebovali:
+  * 1x prototipna plošča,
+  * 1x razširitev in podaljševalni kabel GPIO pinov,
+  * 5x LED dioda (2x rdeča, 2x zelena, 1x rdeča),
+  * 5x $220 \Ohm$ upornik,
+  * 1x piskač (buzzer)
+  * 1x gumb,
+  * več veznih žičk različnih barv.
 
 * Vezje
+  Na spodnji sliki je končna slika ciljnega vezja signalizacije. 
+  
+  #+CAPTION: Končna slika vezja z vsemi elementi
+  #+NAME:   fig:REB_sem
+  [[file:breadboard/REB_RES_3LEDsem_2LED_sem_BT_BUZ_bb.png][breadboard/REB_RES_3LEDsem_2LED_sem_BT_BUZ_bb.png]]
 
 * Koraki izdelave
 
 ** Priklop Raspbery-Pi
-
+   
 ** Spoznavanje Pixle in IDLE
+   V tem delu bomo spoznali uporabniški vmesnik *PIXLE* in urejevalnik besedil
+   za programiranje *Thonny*.
+
 ** Spoznavanje elektrotehničnih elementov
    
 *** Prototipna ploščica
@@ -42,6 +54,7 @@
 
 *** Piskač
 
+
 ** GPIO
 
 ** Priklop razširitvenega priklopa na prototipno ploščico in R-Piska
@@ -52,15 +65,19 @@
 ** Utripajoča led (1x)
    Pri tej nalogi bomo spoznali kako priklopimo eno LED diodo v vezje in jo
    krmilimo tako, da bo ta utripala. 
-   
 *** Vezava LED 
-   
+    #+CAPTION: Vezje z eno LED diodo. 
+    #+NAME:   fig:REB_sem
+    [[file:breadboard/REB_1LED.png][breadboard/REB_1LED.png]]
 
 *** Programska koda
     Za delovanje programa bomo potrebovali dve zunanjivi knjižnici *gpiozero* in
     *time*. *gpiozreo* bo poskrbela da bomo lahko prižigali in ugašali lučke.
     Knjižnica *time* bo poskrbela za pavze. V programu za urejanje programske
-    kode odpri datoteko semafor_pesci_zacetek.py. 
+    kode odpri datoteko semafor_pesci_zacetek.py. V *Thonny* odprite spodnjo
+    datoteko.
+
+    *DATOTEKA*: =code/01_led.py=
 
     #+BEGIN_SRC python
       import gpiozero
@@ -79,11 +96,16 @@
     #+END_SRC
     
 *** Vaja
-    Program spremeni tako, da bodo lučke utripale počasneje ali hitreje. 
-   
+     Program spremeni tako, da bodo lučke utripale počasneje ali hitreje. 
+    
 ** Semafor za pešce (2x LED vzporedno)
-
+   Sestavimo vezje rdeče in zelene barve ter jih programirajmo tako, da bodo
+   simulirale prehod za pešce. 
 *** Vezje
+    
+    #+CAPTION: Vezava 2x LED za semafor za peščce
+    #+NAME:   fig:REB_sem
+    [[file:breadboard/REB_2LED_sem.png][/breadboard/REB_2LED_sem.png]]
 
 *** Programska koda
     Program od prej spremeni na naslednji način. 
@@ -98,54 +120,161 @@
        zelena prižgana
        počakaj 1 s
 
+    *DATOTEKA*: =code/02_semafor_pesci.py=
+       
     #+BEGIN_SRC python
       #inicializacija semafor pešci
-      pesci_zelena = gpiozero.LED(5)
-      pesci_rdeca = gpiozero.LED(6)
+      p_zelena = gpiozero.LED(5)
+      p_rdeca = gpiozero.LED(6)
 
       while True:
-          pesci_rdeca.on()
-          pesci_zelena.off()
+          p_rdeca.on()
+          p_zelena.off()
           time.sleep(3)
 
-          pesci_rdeca.off()
-          pesci_zelena.on()
+          p_rdeca.off()
+          p_zelena.on()
           time.sleep(1)
     #+END_SRC       
 
 ** Semafor za avtomobile (3x led zaporedno)
+   K obstoječemu vezju dodamo vezje semaforja za avtomobile.
+   
+*** Vezje
+    #+CAPTION: Vezava 2x LED za semafor za peščce
+    #+NAME:   fig:REB_sem
+    [[file:breadboard/REB_3LED_sem.png][breadboard/REB_3LED_sem.png]]
+    
+*** Programska koda 
+    #+BEGIN_SRC python
+      import gpiozero
+      import time
 
-** Priklop stikala
+      #SEMAFOR AVTOMOBILI
+      #Inicializacija
+      a_zelena = gpiozero.LED(17)
+      a_oranzna = gpiozero.LED(27)
+      a_rdeca = gpiozero.LED(22)
+
+      while True:
+          a_rdeca.on()
+          a_oranzna.off()
+          a_zelena.off()
+          time.sleep(3)
+
+          a_oranzna.on()
+          time.sleep(1)
+
+          a_rdeca.off()
+          a_oranzna.off()
+          a_zelena.on()
+          time.sleep(3)
+
+          a_oranzna.on()
+          a_zelena.off()
+          time.sleep(1)
+    #+END_SRC
+
+** Priklop stikala in priklop piskača
    V tem delu bomo priklopili gumb in z njim krmilili vklop semaforja za pešce.
 
 *** Vezava
+    Piskača priklopimo posebej na povezave *GPIO21*, gumb na povezavo *GPIO22*
+    in ozemljitev *GND*. 
 
-*** Programska koda 
-
-** Priklop piskača
-
-*** Vezava piskača
-    Piskača priklopimo posebej na povezave *GPIO21* in *GND*. 
+    Glej končno sliko.
 
 *** Programska koda
     #+BEGIN_SRC python
       #Inicializacija piskača
-      zvok = gpiozero.Buzzer()
+      zvok = gpiozero.Buzzer(20)
+      #Inicializacija gumba
+      gumb.Button(21)
 
-      #vklop zvoka
-      zvok.on()
-
-      #izklop zvoka
-      zvok.off()
+      #Uporaba zanka in pogojnega stavka za preveranje stanja tipke.
+      while True:
+          if gumb.is_pressed:    #Z pogojnim stavkom preverjamo če je gumb pritisnjen. 
+              zvok.on()          #vklop zvoka
+              time.sleep(0.5)
+          else:
+              zvok.off()         #Izklop zvoka
+              time.sleep(0.5)
     #+END_SRC
-   
-*** Vezava piskača
-    
-*** Programska koda
 
-* Programska koda
-  * Končni program:
-  * Program za učence: 
+** Končni projekt
+   Sedaj imamo priklopljene vse elemente. Napisati moramo samo še program, ki 
+   bo poganjal simulacijo semaforja. 
+
+*** Programska koda
+   
+
+*** Vezje
+    #+CAPTION: Končna vezava vseh elementov. 
+    #+NAME:   fig:REB_sem
+    [[file:breadboard/REB_RES_3LEDsem_2LED_sem_BT_BUZ_bb.png][breadboard/REB_RES_3LEDsem_2LED_sem_BT_BUZ_bb.png]]
+
+*** Programska koda
+    #+BEGIN_SRC python 
+       #!/usr/bin/env python
+       # -*- coding: utf-8 -*-
+
+       import gpiozero
+       import time
+
+       #SEMAFOR AVTOMOBILI
+       #Inicializacija semafor avtomobili
+       a_zelena = gpiozero.LED(17)
+       a_oranzna = gpiozero.LED(27)
+       a_rdeca = gpiozero.LED(22)
+
+       #inicializacija semafor pešci
+       p_zelena = gpiozero.LED(5)
+       p_rdeca = gpiozero.LED(6)
+
+       #Inicializacija piskača
+       zvok = gpiozero.Buzzer(20)
+       #Inicializacija gumba
+       gumb = gpiozero.Button(21)
+
+       def prehod():
+           time.sleep(2)
+           #oranzna za avtomobile
+           a_zelena.off()
+           a_oranzna.on()
+           time.sleep(1)
+           #rdeca za avtomobile
+           a_oranzna.off()
+           a_rdeca.on()
+           time.sleep(1)
+           #zelena za pesce
+           p_rdeca.off()
+           p_zelena.on()
+           zvok.on()
+           time.sleep(2)
+           #rdeca za pesce
+           zvok.off()
+           p_zelena.off()
+           time.sleep(0.5)
+           p_rdeca.on()
+           a_oranzna.on()
+           a_rdeca.off()
+           time.sleep(1)
+           a_zelena.on()
+           a_oranzna.off()
+
+       a_rdeca.off()
+       a_oranzna.off()
+       a_zelena.on()
+
+       p_rdeca.on()
+       p_zelena.off()
+
+       while True:
+            if gumb.is_pressed:
+                print("Pritisnil!")
+                prehod()
+
+    #+END_SRC
 
 * Viri in Literatura
   1. Gregor Anželj, *Prometna signalizacija*, 

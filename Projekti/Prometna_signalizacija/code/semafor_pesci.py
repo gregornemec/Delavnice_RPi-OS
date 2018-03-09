@@ -6,20 +6,48 @@ import time
 
 
 #inicializacija LED
+#led = gpiozero.LED(17)
 
+#SEMAFOR P
 #inicializacija semafor pešci
-pesci_zelena = gpiozero.LED(5)
-pesci_rdeca = gpiozero.LED(6)
+# p_zelena = gpiozero.LED(6)
+# p_rdeca = gpiozero.LED(5)
+
+# while True:
+#     p_rdeca.on()
+#     p_zelena.off()
+#     time.sleep(10)
+
+#     p_rdeca.off()
+#     p_zelena.on()
+#     time.sleep(3)
+
+
+#SEMAFOR AVTOMOBILI
+#Inicializacija
+a_zelena = gpiozero.LED(17)
+a_oranzna = gpiozero.LED(27)
+a_rdeca = gpiozero.LED(22)
 
 while True:
-    pesci_rdeca.on()
-    pesci_zelena.off()
+    a_rdeca.on()
+    a_oranzna.off()
+    a_zelena.off()
     time.sleep(3)
 
-    pesci_rdeca.off()
-    pesci_zelena.on()
+    a_oranzna.on()
     time.sleep(1)
 
+    a_rdeca.off()
+    a_oranzna.off()
+    a_zelena.on()
+    time.sleep(3)
+
+    a_oranzna.on()
+    a_zelena.off()
+    time.sleep(1)
+
+    
 #inicializacija piskača
 # zvok = gpiozero.Buzzer(21)
 
