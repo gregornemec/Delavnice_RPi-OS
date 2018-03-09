@@ -14,15 +14,15 @@ zvok = gpiozero.Buzzer(21)
 gumb = gpiozero.Button(20)
 
 
-def signal(time):
+def signal(t):
     led.on()
     zvok.on()
     print("LED on")
-    time.sleep(time)
+    time.sleep(t)
     led.off()
     zvok.off()
     print("LED off")
-    time.sleep(time)
+    time.sleep(t)
 
 
 while True:
