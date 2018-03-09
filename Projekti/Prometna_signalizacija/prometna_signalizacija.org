@@ -2,7 +2,6 @@
 #+DATE: 07.03.2018
 #+AUTHOR: Gregor Nemec
 #+SETUPFILE: ~/Git/org-html-themes/setup/theme-readtheorg.setup
-#+SETUPFILE: ~/Git/org-html-themes/setup/theme-readtheorg.setup
 #+bind: org-export-publishing-directory "./exports"
 #+OPTIONS: LaTeX:t
 #+OPTIONS: tex:dvipng
@@ -32,7 +31,7 @@
   
   #+CAPTION: Končna slika vezja z vsemi elementi
   #+NAME:   fig:REB_sem
-  [[file:breadboard/REB_RES_3LEDsem_2LED_sem_BT_BUZ_bb.png][breadboard/REB_RES_3LEDsem_2LED_sem_BT_BUZ_bb.png]]
+  [[file:breadboard/REB_RES_3LEDsem_2LED_sem_BT_BUZ_bb.png]]
 
 * Koraki izdelave
 
@@ -68,7 +67,7 @@
 *** Vezava LED 
     #+CAPTION: Vezje z eno LED diodo. 
     #+NAME:   fig:REB_sem
-    [[file:breadboard/REB_1LED.png][breadboard/REB_1LED.png]]
+    [[file:breadboard/REB_1LED.png]]
 
 *** Programska koda
     Za delovanje programa bomo potrebovali dve zunanjivi knjižnici *gpiozero* in
@@ -105,7 +104,7 @@
     
     #+CAPTION: Vezava 2x LED za semafor za peščce
     #+NAME:   fig:REB_sem
-    [[file:breadboard/REB_2LED_sem.png][/breadboard/REB_2LED_sem.png]]
+    [[file:breadboard/REB_2LED_sem.png]]
 
 *** Programska koda
     Program od prej spremeni na naslednji način. 
@@ -143,7 +142,7 @@
 *** Vezje
     #+CAPTION: Vezava 2x LED za semafor za peščce
     #+NAME:   fig:REB_sem
-    [[file:breadboard/REB_3LED_sem.png][breadboard/REB_3LED_sem.png]]
+    [[file:breadboard/REB_3LED_sem.png]]
     
 *** Programska koda 
     #+BEGIN_SRC python
@@ -211,7 +210,7 @@
 *** Vezje
     #+CAPTION: Končna vezava vseh elementov. 
     #+NAME:   fig:REB_sem
-    [[file:breadboard/REB_RES_3LEDsem_2LED_sem_BT_BUZ_bb.png][breadboard/REB_RES_3LEDsem_2LED_sem_BT_BUZ_bb.png]]
+    [[file:breadboard/REB_RES_3LEDsem_2LED_sem_BT_BUZ_bb.png]]
 
 *** Programska koda
     #+BEGIN_SRC python 

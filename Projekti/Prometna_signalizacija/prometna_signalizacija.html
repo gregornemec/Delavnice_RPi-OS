@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="sl" xml:lang="sl">
+<head>
+<!-- 2018-03-10 sob 00:48 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Prometna signalizacija</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Gregor Nemec" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Prometna signalizacija</h1>
+
+<div id="outline-container-orgdb7945a" class="outline-2">
+<h2 id="orgdb7945a"><span class="section-number-2">1</span> Naloga</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+S signalizacijo v prometu se srečujemo vsak dan. Naš končni cilj je prehod za
+pešce za slepe in slabovidne.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4614b0a" class="outline-2">
+<h2 id="org4614b0a"><span class="section-number-2">2</span> Sestavine</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Pri projektu bomo potrebovali:
+</p>
+<ul class="org-ul">
+<li>1x prototipna plošča,</li>
+<li>1x razširitev in podaljševalni kabel GPIO pinov,</li>
+<li>5x LED dioda (2x rdeča, 2x zelena, 1x rdeča),</li>
+<li>5x <img src="ltximg/prometna_signalizacija_e63102f65c584a86d42d3b915dee89b94317b5af.png" alt="prometna_signalizacija_e63102f65c584a86d42d3b915dee89b94317b5af.png" /> upornik,</li>
+<li>1x piskač (buzzer)</li>
+<li>1x gumb,</li>
+<li>več veznih žičk različnih barv.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9e2c093" class="outline-2">
+<h2 id="org9e2c093"><span class="section-number-2">3</span> Vezje</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Na spodnji sliki je končna slika ciljnega vezja signalizacije. 
+</p>
+
+
+<div id="orgf17a970" class="figure">
+<p><img src="breadboard/REB_RES_3LEDsem_2LED_sem_BT_BUZ_bb.png" alt="REB_RES_3LEDsem_2LED_sem_BT_BUZ_bb.png" />
+</p>
+<p><span class="figure-number">Slika 1 </span>Končna slika vezja z vsemi elementi</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org21d5884" class="outline-2">
+<h2 id="org21d5884"><span class="section-number-2">4</span> Koraki izdelave</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org9e49466" class="outline-3">
+<h3 id="org9e49466"><span class="section-number-3">4.1</span> Priklop Raspbery-Pi</h3>
+</div>
+
+<div id="outline-container-orgd55c3a0" class="outline-3">
+<h3 id="orgd55c3a0"><span class="section-number-3">4.2</span> Spoznavanje Pixle in IDLE</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+V tem delu bomo spoznali uporabniški vmesnik <b>PIXLE</b> in urejevalnik besedil
+za programiranje <b>Thonny</b>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org64b2260" class="outline-3">
+<h3 id="org64b2260"><span class="section-number-3">4.3</span> Spoznavanje elektrotehničnih elementov</h3>
+<div class="outline-text-3" id="text-4-3">
+</div>
+<div id="outline-container-org8a30b6e" class="outline-4">
+<h4 id="org8a30b6e"><span class="section-number-4">4.3.1</span> Prototipna ploščica</h4>
+</div>
+
+<div id="outline-container-org472d21f" class="outline-4">
+<h4 id="org472d21f"><span class="section-number-4">4.3.2</span> Upornik</h4>
+</div>
+
+<div id="outline-container-orgf32ad35" class="outline-4">
+<h4 id="orgf32ad35"><span class="section-number-4">4.3.3</span> LED dioda</h4>
+</div>
+
+<div id="outline-container-org8fa8193" class="outline-4">
+<h4 id="org8fa8193"><span class="section-number-4">4.3.4</span> Stikalo</h4>
+</div>
+
+<div id="outline-container-org252eb84" class="outline-4">
+<h4 id="org252eb84"><span class="section-number-4">4.3.5</span> Piskač</h4>
+</div>
+</div>
+
+
+<div id="outline-container-orgaf1294b" class="outline-3">
+<h3 id="orgaf1294b"><span class="section-number-3">4.4</span> GPIO</h3>
+</div>
+
+<div id="outline-container-org1979344" class="outline-3">
+<h3 id="org1979344"><span class="section-number-3">4.5</span> Priklop razširitvenega priklopa na prototipno ploščico in R-Piska</h3>
+<div class="outline-text-3" id="text-4-5">
+<p>
+Pred sabo imaš prototipno ploščico in na njo vključen razširitveni priklop.
+Ta nam omogoča samo podaljšek, tako do posameznih pinov GPIO pridemo
+neposredno na prototipni ploščici, kar nam omogoča nekoliko lažje delo.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7a0fc2e" class="outline-3">
+<h3 id="org7a0fc2e"><span class="section-number-3">4.6</span> Utripajoča led (1x)</h3>
+<div class="outline-text-3" id="text-4-6">
+<p>
+Pri tej nalogi bomo spoznali kako priklopimo eno LED diodo v vezje in jo
+krmilimo tako, da bo ta utripala. 
+</p>
+</div>
+<div id="outline-container-orgfa3262f" class="outline-4">
+<h4 id="orgfa3262f"><span class="section-number-4">4.6.1</span> Vezava LED</h4>
+<div class="outline-text-4" id="text-4-6-1">
+
+<div id="orgecad29c" class="figure">
+<p><img src="breadboard/REB_1LED.png" alt="REB_1LED.png" />
+</p>
+<p><span class="figure-number">Slika 2 </span>Vezje z eno LED diodo.</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfb4196b" class="outline-4">
+<h4 id="orgfb4196b"><span class="section-number-4">4.6.2</span> Programska koda</h4>
+<div class="outline-text-4" id="text-4-6-2">
+<p>
+Za delovanje programa bomo potrebovali dve zunanjivi knjižnici <b>gpiozero</b> in
+<b>time</b>. <b>gpiozreo</b> bo poskrbela da bomo lahko prižigali in ugašali lučke.
+Knjižnica <b>time</b> bo poskrbela za pavze. V programu za urejanje programske
+kode odpri datoteko semafor<sub>pesci</sub><sub>zacetek.py</sub>. V <b>Thonny</b> odprite spodnjo
+datoteko.
+</p>
+
+<p>
+<b>DATOTEKA</b>: <code>code/01_led.py</code>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #859900;">import</span> gpiozero
+<span style="color: #859900;">import</span> time
+
+<span style="color: #586e75; font-style: italic;">#</span><span style="color: #586e75; font-style: italic;">inicializacija LED diode </span>
+<span style="color: #6c71c4;">led</span> = gpiozero.LED<span style="color: #839496;">(</span><span style="color: #268bd2;">27</span><span style="color: #839496;">)</span> <span style="color: #586e75; font-style: italic;">#</span><span style="color: #586e75; font-style: italic;">GPIO povemo, da imamo LED priklopljeno na pinu 27.</span>
+
+<span style="color: #859900;">while</span> <span style="color: #268bd2;">True</span>:            <span style="color: #586e75; font-style: italic;">#</span><span style="color: #586e75; font-style: italic;">Zanka, ki se neskon&#269;no ponavlja.</span>
+    led.on<span style="color: #839496;">()</span>           <span style="color: #586e75; font-style: italic;">#</span><span style="color: #586e75; font-style: italic;">Z ukazom on() pri&#382;gemo LED.</span>
+    <span style="color: #859900;">print</span><span style="color: #839496;">(</span><span style="color: #2aa198;">"LED on"</span><span style="color: #839496;">)</span>    <span style="color: #586e75; font-style: italic;">#</span><span style="color: #586e75; font-style: italic;">Izpis v ukazno vrstico ali lupino.</span>
+    time.sleep<span style="color: #839496;">(</span><span style="color: #268bd2;">1</span><span style="color: #839496;">)</span>      <span style="color: #586e75; font-style: italic;">#</span><span style="color: #586e75; font-style: italic;">Zaspi za &#269;as v sekundah.</span>
+    led.off<span style="color: #839496;">()</span>          <span style="color: #586e75; font-style: italic;">#</span><span style="color: #586e75; font-style: italic;">Z ukazom off() ugasnemo LED.</span>
+    <span style="color: #859900;">print</span><span style="color: #839496;">(</span><span style="color: #2aa198;">"LED off"</span><span style="color: #839496;">)</span>
+    time.sleep<span style="color: #839496;">(</span><span style="color: #268bd2;">1</span><span style="color: #839496;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga61bdeb" class="outline-4">
+<h4 id="orga61bdeb"><span class="section-number-4">4.6.3</span> Vaja</h4>
+<div class="outline-text-4" id="text-4-6-3">
+<p>
+Program spremeni tako, da bodo lučke utripale počasneje ali hitreje. 
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge01154a" class="outline-3">
+<h3 id="orge01154a"><span class="section-number-3">4.7</span> Semafor za pešce (2x LED vzporedno)</h3>
+<div class="outline-text-3" id="text-4-7">
+<p>
+Sestavimo vezje rdeče in zelene barve ter jih programirajmo tako, da bodo
+simulirale prehod za pešce. 
+</p>
+</div>
+<div id="outline-container-org1346362" class="outline-4">
+<h4 id="org1346362"><span class="section-number-4">4.7.1</span> Vezje</h4>
+<div class="outline-text-4" id="text-4-7-1">
+
+<div id="orgfd1f14e" class="figure">
+<p><img src="breadboard/REB_2LED_sem.png" alt="REB_2LED_sem.png" />
+</p>
+<p><span class="figure-number">Slika 3 </span>Vezava 2x LED za semafor za peščce</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb101666" class="outline-4">
+<h4 id="orgb101666"><span class="section-number-4">4.7.2</span> Programska koda</h4>
+<div class="outline-text-4" id="text-4-7-2">
+<p>
+Program od prej spremeni na naslednji način. 
+</p>
+<ol class="org-ol">
+<li>Naredi inicializacijo dveh spremenljivka za dve LED diodi, eno za zeleno
+in drugo za rdečo.</li>
+<li><p>
+V <code>while True:</code> zanko zapiši delovanje semaforja v naslednjih korakih: 
+rdeča prižgana
+zelena ugasnjena
+počakaj 3 s
+</p>
+
+<p>
+rdeča ugasnjena
+zelena prižgana
+počakaj 1 s
+</p></li>
+</ol>
+
+<p>
+<b>DATOTEKA</b>: <code>code/02_semafor_pesci.py</code>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #586e75; font-style: italic;">#</span><span style="color: #586e75; font-style: italic;">inicializacija semafor pe&#353;ci</span>
+<span style="color: #6c71c4;">p_zelena</span> = gpiozero.LED<span style="color: #839496;">(</span><span style="color: #268bd2;">5</span><span style="color: #839496;">)</span>
+<span style="color: #6c71c4;">p_rdeca</span> = gpiozero.LED<span style="color: #839496;">(</span><span style="color: #268bd2;">6</span><span style="color: #839496;">)</span>
+
+<span style="color: #859900;">while</span> <span style="color: #268bd2;">True</span>:
+    p_rdeca.on<span style="color: #839496;">()</span>
+    p_zelena.off<span style="color: #839496;">()</span>
+    time.sleep<span style="color: #839496;">(</span><span style="color: #268bd2;">3</span><span style="color: #839496;">)</span>
+
+    p_rdeca.off<span style="color: #839496;">()</span>
+    p_zelena.on<span style="color: #839496;">()</span>
+    time.sleep<span style="color: #839496;">(</span><span style="color: #268bd2;">1</span><span style="color: #839496;">)</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7e52bf1" class="outline-3">
+<h3 id="org7e52bf1"><span class="section-number-3">4.8</span> Semafor za avtomobile (3x led zaporedno)</h3>
+<div class="outline-text-3" id="text-4-8">
+<p>
+K obstoječemu vezju dodamo vezje semaforja za avtomobile.
+</p>
+</div>
+
+<div id="outline-container-org6a0b8c9" class="outline-4">
+<h4 id="org6a0b8c9"><span class="section-number-4">4.8.1</span> Vezje</h4>
+<div class="outline-text-4" id="text-4-8-1">
+
+<div id="org2e46166" class="figure">
+<p><img src="breadboard/REB_3LED_sem.png" alt="REB_3LED_sem.png" />
+</p>
+<p><span class="figure-number">Slika 4 </span>Vezava 2x LED za semafor za peščce</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1b3b52a" class="outline-4">
+<h4 id="org1b3b52a"><span class="section-number-4">4.8.2</span> Programska koda</h4>
+<div class="outline-text-4" id="text-4-8-2">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #859900;">import</span> gpiozero
+<span style="color: #859900;">import</span> time
+
+<span style="color: #586e75; font-style: italic;">#</span><span style="color: #586e75; font-style: italic;">SEMAFOR AVTOMOBILI</span>
+<span style="color: #586e75; font-style: italic;">#</span><span style="color: #586e75; font-style: italic;">Inicializacija</span>
+<span style="color: #6c71c4;">a_zelena</span> = gpiozero.LED<span style="color: #839496;">(</span><span style="color: #268bd2;">17</span><span style="color: #839496;">)</span>
+<span style="color: #6c71c4;">a_oranzna</span> = gpiozero.LED<span style="color: #839496;">(</span><span style="color: #268bd2;">27</span><span style="color: #839496;">)</span>
+<span style="color: #6c71c4;">a_rdeca</span> = gpiozero.LED<span style="color: #839496;">(</span><span style="color: #268bd2;">22</span><span style="color: #839496;">)</span>
+
+<span style="color: #859900;">while</span> <span style="color: #268bd2;">True</span>:
+    a_rdeca.on<span style="color: #839496;">()</span>
+    a_oranzna.off<span style="color: #839496;">()</span>
+    a_zelena.off<span style="color: #839496;">()</span>
+    time.sleep<span style="color: #839496;">(</span><span style="color: #268bd2;">3</span><span style="color: #839496;">)</span>
+
+    a_oranzna.on<span style="color: #839496;">()</span>
+    time.sleep<span style="color: #839496;">(</span><span style="color: #268bd2;">1</span><span style="color: #839496;">)</span>
+
+    a_rdeca.off<span style="color: #839496;">()</span>
+    a_oranzna.off<span style="color: #839496;">()</span>
+    a_zelena.on<span style="color: #839496;">()</span>
+    time.sleep<span style="color: #839496;">(</span><span style="color: #268bd2;">3</span><span style="color: #839496;">)</span>
+
+    a_oranzna.on<span style="color: #839496;">()</span>
+    a_zelena.off<span style="color: #839496;">()</span>
+    time.sleep<span style="color: #839496;">(</span><span style="color: #268bd2;">1</span><span style="color: #839496;">)</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org30b863c" class="outline-3">
+<h3 id="org30b863c"><span class="section-number-3">4.9</span> Priklop stikala in priklop piskača</h3>
+<div class="outline-text-3" id="text-4-9">
+<p>
+V tem delu bomo priklopili gumb in z njim krmilili vklop semaforja za pešce.
+</p>
+</div>
+
+<div id="outline-container-org42c226f" class="outline-4">
+<h4 id="org42c226f"><span class="section-number-4">4.9.1</span> Vezava</h4>
+<div class="outline-text-4" id="text-4-9-1">
+<p>
+Piskača priklopimo posebej na povezave <b>GPIO21</b>, gumb na povezavo <b>GPIO22</b>
+in ozemljitev <b>GND</b>. 
+</p>
+
+<p>
+Glej končno sliko.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org03e00de" class="outline-4">
+<h4 id="org03e00de"><span class="section-number-4">4.9.2</span> Programska koda</h4>
+<div class="outline-text-4" id="text-4-9-2">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #586e75; font-style: italic;">#</span><span style="color: #586e75; font-style: italic;">Inicializacija piska&#269;a</span>
+<span style="color: #6c71c4;">zvok</span> = gpiozero.Buzzer<span style="color: #839496;">(</span><span style="color: #268bd2;">20</span><span style="color: #839496;">)</span>
+<span style="color: #586e75; font-style: italic;">#</span><span style="color: #586e75; font-style: italic;">Inicializacija gumba</span>
+gumb.Button<span style="color: #839496;">(</span><span style="color: #268bd2;">21</span><span style="color: #839496;">)</span>
+
+<span style="color: #586e75; font-style: italic;">#</span><span style="color: #586e75; font-style: italic;">Uporaba zanka in pogojnega stavka za preveranje stanja tipke.</span>
+<span style="color: #859900;">while</span> <span style="color: #268bd2;">True</span>:
+    <span style="color: #859900;">if</span> gumb.is_pressed:    <span style="color: #586e75; font-style: italic;">#</span><span style="color: #586e75; font-style: italic;">Z pogojnim stavkom preverjamo &#269;e je gumb pritisnjen. </span>
+        zvok.on<span style="color: #839496;">()</span>          <span style="color: #586e75; font-style: italic;">#</span><span style="color: #586e75; font-style: italic;">vklop zvoka</span>
+        time.sleep<span style="color: #839496;">(</span><span style="color: #268bd2;">0</span>.<span style="color: #268bd2;">5</span><span style="color: #839496;">)</span>
+    <span style="color: #859900;">else</span>:
+        zvok.off<span style="color: #839496;">()</span>         <span style="color: #586e75; font-style: italic;">#</span><span style="color: #586e75; font-style: italic;">Izklop zvoka</span>
+        time.sleep<span style="color: #839496;">(</span><span style="color: #268bd2;">0</span>.<span style="color: #268bd2;">5</span><span style="color: #839496;">)</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7360a56" class="outline-3">
+<h3 id="org7360a56"><span class="section-number-3">4.10</span> Končni projekt</h3>
+<div class="outline-text-3" id="text-4-10">
+<p>
+Sedaj imamo priklopljene vse elemente. Napisati moramo samo še program, ki 
+bo poganjal simulacijo semaforja. 
+</p>
+</div>
+
+<div id="outline-container-orgfba0aec" class="outline-4">
+<h4 id="orgfba0aec"><span class="section-number-4">4.10.1</span> Programska koda</h4>
+</div>
+
+
+<div id="outline-container-org276852a" class="outline-4">
+<h4 id="org276852a"><span class="section-number-4">4.10.2</span> Vezje</h4>
+<div class="outline-text-4" id="text-4-10-2">
+
+<div id="orga4a303b" class="figure">
+<p><img src="breadboard/REB_RES_3LEDsem_2LED_sem_BT_BUZ_bb.png" alt="REB_RES_3LEDsem_2LED_sem_BT_BUZ_bb.png" />
+</p>
+<p><span class="figure-number">Slika 5 </span>Končna vezava vseh elementov.</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcbb4132" class="outline-4">
+<h4 id="orgcbb4132"><span class="section-number-4">4.10.3</span> Programska koda</h4>
+<div class="outline-text-4" id="text-4-10-3">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #586e75; font-style: italic;">#</span><span style="color: #586e75; font-style: italic;">!/usr/bin/env python</span>
+<span style="color: #586e75; font-style: italic;"># </span><span style="color: #586e75; font-style: italic;">-*- coding: utf-8 -*-</span>
+
+<span style="color: #859900;">import</span> gpiozero
+<span style="color: #859900;">import</span> time
+
+<span style="color: #586e75; font-style: italic;">#</span><span style="color: #586e75; font-style: italic;">SEMAFOR AVTOMOBILI</span>
+<span style="color: #586e75; font-style: italic;">#</span><span style="color: #586e75; font-style: italic;">Inicializacija semafor avtomobili</span>
+<span style="color: #6c71c4;">a_zelena</span> = gpiozero.LED<span style="color: #839496;">(</span><span style="color: #268bd2;">17</span><span style="color: #839496;">)</span>
+<span style="color: #6c71c4;">a_oranzna</span> = gpiozero.LED<span style="color: #839496;">(</span><span style="color: #268bd2;">27</span><span style="color: #839496;">)</span>
+<span style="color: #6c71c4;">a_rdeca</span> = gpiozero.LED<span style="color: #839496;">(</span><span style="color: #268bd2;">22</span><span style="color: #839496;">)</span>
+
+<span style="color: #586e75; font-style: italic;">#</span><span style="color: #586e75; font-style: italic;">inicializacija semafor pe&#353;ci</span>
+<span style="color: #6c71c4;">p_zelena</span> = gpiozero.LED<span style="color: #839496;">(</span><span style="color: #268bd2;">5</span><span style="color: #839496;">)</span>
+<span style="color: #6c71c4;">p_rdeca</span> = gpiozero.LED<span style="color: #839496;">(</span><span style="color: #268bd2;">6</span><span style="color: #839496;">)</span>
+
+<span style="color: #586e75; font-style: italic;">#</span><span style="color: #586e75; font-style: italic;">Inicializacija piska&#269;a</span>
+<span style="color: #6c71c4;">zvok</span> = gpiozero.Buzzer<span style="color: #839496;">(</span><span style="color: #268bd2;">20</span><span style="color: #839496;">)</span>
+<span style="color: #586e75; font-style: italic;">#</span><span style="color: #586e75; font-style: italic;">Inicializacija gumba</span>
+<span style="color: #6c71c4;">gumb</span> = gpiozero.Button<span style="color: #839496;">(</span><span style="color: #268bd2;">21</span><span style="color: #839496;">)</span>
+
+<span style="color: #859900;">def</span> <span style="color: #b58900;">prehod</span><span style="color: #839496;">()</span>:
+    time.sleep<span style="color: #839496;">(</span><span style="color: #268bd2;">2</span><span style="color: #839496;">)</span>
+    <span style="color: #586e75; font-style: italic;">#</span><span style="color: #586e75; font-style: italic;">oranzna za avtomobile</span>
+    a_zelena.off<span style="color: #839496;">()</span>
+    a_oranzna.on<span style="color: #839496;">()</span>
+    time.sleep<span style="color: #839496;">(</span><span style="color: #268bd2;">1</span><span style="color: #839496;">)</span>
+    <span style="color: #586e75; font-style: italic;">#</span><span style="color: #586e75; font-style: italic;">rdeca za avtomobile</span>
+    a_oranzna.off<span style="color: #839496;">()</span>
+    a_rdeca.on<span style="color: #839496;">()</span>
+    time.sleep<span style="color: #839496;">(</span><span style="color: #268bd2;">1</span><span style="color: #839496;">)</span>
+    <span style="color: #586e75; font-style: italic;">#</span><span style="color: #586e75; font-style: italic;">zelena za pesce</span>
+    p_rdeca.off<span style="color: #839496;">()</span>
+    p_zelena.on<span style="color: #839496;">()</span>
+    zvok.on<span style="color: #839496;">()</span>
+    time.sleep<span style="color: #839496;">(</span><span style="color: #268bd2;">2</span><span style="color: #839496;">)</span>
+    <span style="color: #586e75; font-style: italic;">#</span><span style="color: #586e75; font-style: italic;">rdeca za pesce</span>
+    zvok.off<span style="color: #839496;">()</span>
+    p_zelena.off<span style="color: #839496;">()</span>
+    time.sleep<span style="color: #839496;">(</span><span style="color: #268bd2;">0</span>.<span style="color: #268bd2;">5</span><span style="color: #839496;">)</span>
+    p_rdeca.on<span style="color: #839496;">()</span>
+    a_oranzna.on<span style="color: #839496;">()</span>
+    a_rdeca.off<span style="color: #839496;">()</span>
+    time.sleep<span style="color: #839496;">(</span><span style="color: #268bd2;">1</span><span style="color: #839496;">)</span>
+    a_zelena.on<span style="color: #839496;">()</span>
+    a_oranzna.off<span style="color: #839496;">()</span>
+
+a_rdeca.off<span style="color: #839496;">()</span>
+a_oranzna.off<span style="color: #839496;">()</span>
+a_zelena.on<span style="color: #839496;">()</span>
+
+p_rdeca.on<span style="color: #839496;">()</span>
+p_zelena.off<span style="color: #839496;">()</span>
+
+<span style="color: #859900;">while</span> <span style="color: #268bd2;">True</span>:
+     <span style="color: #859900;">if</span> gumb.is_pressed:
+         <span style="color: #859900;">print</span><span style="color: #839496;">(</span><span style="color: #2aa198;">"Pritisnil!"</span><span style="color: #839496;">)</span>
+         prehod<span style="color: #839496;">()</span>
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2392558" class="outline-2">
+<h2 id="org2392558"><span class="section-number-2">5</span> Viri in Literatura</h2>
+<div class="outline-text-2" id="text-5">
+<ol class="org-ol">
+<li>Gregor Anželj, <b>Prometna signalizacija</b>, 
+<a href="https://anzeljg.github.io/rpi/rpi/3201/index.html">https://anzeljg.github.io/rpi/rpi/3201/index.html</a></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Datum: 07.03.2018</p>
+<p class="author">Avtor: Gregor Nemec</p>
+<p class="date">Ustvarjeno: 2018-03-10 sob 00:48</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
