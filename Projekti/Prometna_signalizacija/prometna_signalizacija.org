@@ -80,6 +80,11 @@
 ** Semafor za avtomobile (3x led zaporedno)
 
 ** Priklop stikala
+   V tem delu bomo priklopili gumb in z njim krmilili vklop semaforja za pešce.
+
+*** Vezava
+
+*** Programska koda 
 
 ** Priklop piskača
 
@@ -87,9 +92,15 @@
     Piskača priklopimo posebej na povezave *GPIO21* in *GND*. 
 
 *** Programska koda
-    #+BEGIN_SRC pythom
+    #+BEGIN_SRC python
+      #Inicializacija piskača
+      zvok = gpiozero.Buzzer()
 
-    
+      #vklop zvoka
+      zvok.on()
+
+      #izklop zvoka
+      zvok.off()
     #+END_SRC
    
 *** Vezava piskača
