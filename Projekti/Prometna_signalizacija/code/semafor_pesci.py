@@ -16,7 +16,7 @@ gumb = gpiozero.Button(20)
 
 delay = 1
 while True:
-    if gumb.is_pressed():
+    if gumb.is_pressed:
         delay = 0.1
         print("Gumb")
     else:
