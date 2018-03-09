@@ -11,13 +11,14 @@ led = gpiozero.LED(27)
 zvok = gpiozero.Buzzer(21)
 
 #inicializacija gumb
-gumb = gpiozero.Button()
+gumb = gpiozero.Button(20)
 
 
 delay = 1
 while True:
     if gumb.is_pressed():
         delay = 0.1
+        print("Gumb")
     else:
         delay = 1
     led.on()
