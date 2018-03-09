@@ -54,28 +54,64 @@
    krmilimo tako, da bo ta utripala. 
    
 *** Vezava LED 
-    
-
+   
 
 *** Programska koda
+    Za delovanje programa bomo potrebovali dve zunanjivi knjižnici *gpiozero* in
+    *time*. *gpiozreo* bo poskrbela da bomo lahko prižigali in ugašali lučke.
+    Knjižnica *time* bo poskrbela za pavze. V programu za urejanje programske
+    kode odpri datoteko semafor_pesci_zacetek.py. 
 
     #+BEGIN_SRC python
       import gpiozero
       import time
 
-      led = gpiozero.LED(27)
+      #inicializacija LED diode 
+      led = gpiozero.LED(27) #GPIO povemo, da imamo LED priklopljeno na pinu 27.
 
-      while True:
-          led.on()
-          print("LED on")
-          time.sleep(1)
-          led.off()
+      while True:            #Zanka, ki se neskončno ponavlja.
+          led.on()           #Z ukazom on() prižgemo LED.
+          print("LED on")    #Izpis v ukazno vrstico ali lupino.
+          time.sleep(1)      #Zaspi za čas v sekundah.
+          led.off()          #Z ukazom off() ugasnemo LED.
           print("LED off")
           time.sleep(1)
     #+END_SRC
+    
+*** Vaja
+    Program spremeni tako, da bodo lučke utripale počasneje ali hitreje. 
    
+** Semafor za pešce (2x LED vzporedno)
 
-** Semafor za pešce (2x led zaporedno)
+*** Vezje
+
+*** Programska koda
+    Program od prej spremeni na naslednji način. 
+    1. Naredi inicializacijo dveh spremenljivka za dve LED diodi, eno za zeleno
+       in drugo za rdečo.
+    2. V =while True:= zanko zapiši delovanje semaforja v naslednjih korakih: 
+       rdeča prižgana
+       zelena ugasnjena
+       počakaj 3 s
+
+       rdeča ugasnjena
+       zelena prižgana
+       počakaj 1 s
+
+    #+BEGIN_SRC python
+      #inicializacija semafor pešci
+      pesci_zelena = gpiozero.LED(5)
+      pesci_rdeca = gpiozero.LED(6)
+
+      while True:
+          pesci_rdeca.on()
+          pesci_zelena.off()
+          time.sleep(3)
+
+          pesci_rdeca.off()
+          pesci_zelena.on()
+          time.sleep(1)
+    #+END_SRC       
 
 ** Semafor za avtomobile (3x led zaporedno)
 
