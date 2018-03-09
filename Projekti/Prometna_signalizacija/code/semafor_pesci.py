@@ -14,21 +14,25 @@ zvok = gpiozero.Buzzer(21)
 gumb = gpiozero.Button(20)
 
 
-delay = 1
-while True:
-    if gumb.is_held:
-        delay = 0.1
-        print("Gumb")
-    else:
-        delay = 1
+def signal(time):
     led.on()
     zvok.on()
     print("LED on")
-    time.sleep(delay)
+    time.sleep(time)
     led.off()
     zvok.off()
     print("LED off")
-    time.sleep(delay)
+    time.sleep(time)
+
+
+while True:
+    if gumb.is_held:
+        signal(0.1)        
+        print("Držim")
+    else:
+        signal(1)
+        print("Ne držim")
+
 
 
 
