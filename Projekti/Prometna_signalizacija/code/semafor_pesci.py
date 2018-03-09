@@ -5,7 +5,8 @@ import gpiozero
 import time
 
 led = gpiozero.LED(27)
-led_zelena = gpiozero.LED()
+zvok = gpiozero.Buzzer(21)
+
 
 while True:
     led.on()
@@ -14,7 +15,7 @@ while True:
     led.off()
     print("LED off")
     time.sleep(1)
-    
+
 
 
 

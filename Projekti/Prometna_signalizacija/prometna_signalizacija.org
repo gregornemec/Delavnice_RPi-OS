@@ -42,6 +42,8 @@
 
 *** Piskač
 
+** GPIO
+
 ** Priklop razširitvenega priklopa na prototipno ploščico in R-Piska
    Pred sabo imaš prototipno ploščico in na njo vključen razširitveni priklop.
    Ta nam omogoča samo podaljšek, tako do posameznih pinov GPIO pridemo
@@ -50,7 +52,27 @@
 ** Utripajoča led (1x)
    Pri tej nalogi bomo spoznali kako priklopimo eno LED diodo v vezje in jo
    krmilimo tako, da bo ta utripala. 
+   
+*** Vezava LED 
+    
 
+
+*** Programska koda
+
+    #+BEGIN_SRC python
+      import gpiozero
+      import time
+
+      led = gpiozero.LED(27)
+
+      while True:
+          led.on()
+          print("LED on")
+          time.sleep(1)
+          led.off()
+          print("LED off")
+          time.sleep(1)
+    #+END_SRC
    
 
 ** Semafor za pešce (2x led zaporedno)
@@ -60,6 +82,19 @@
 ** Priklop stikala
 
 ** Priklop piskača
+
+*** Vezava piskača
+    Piskača priklopimo posebej na povezave *GPIO21* in *GND*. 
+
+*** Programska koda
+    #+BEGIN_SRC pythom
+
+    
+    #+END_SRC
+   
+*** Vezava piskača
+    
+*** Programska koda
 
 * Programska koda
   * Končni program:
