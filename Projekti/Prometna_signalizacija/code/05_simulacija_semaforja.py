@@ -4,7 +4,6 @@
 import gpiozero
 import time
 
-
 #SEMAFOR AVTOMOBILI
 #Inicializacija semafor avtomobili
 a_zelena = gpiozero.LED(17)
