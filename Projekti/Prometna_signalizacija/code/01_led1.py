@@ -5,7 +5,7 @@ import gpiozero
 import time
 
 #inicializacija LED diode 
-led = gpiozero.LED(27) #GPIO povemo, da imamo LED priklopljeno na pinu 27.
+led = gpiozero.LED(17) #GPIO povemo, da imamo LED priklopljeno na pinu 27.
 
 while True:            #Zanka, ki se neskončno ponavlja.
     led.on()           #Z ukazom on() prižgemo LED.

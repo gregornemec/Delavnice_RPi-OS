@@ -6,9 +6,9 @@ import time
 
 
 #Inicializacija piskača
-zvok = gpiozero.Buzzer(20)
+zvok = gpiozero.Buzzer(21)
 #Inicializacija gumba
-gumb = gpiozero.Button(21)
+gumb = gpiozero.Button(20)
 
 while True:
     if gumb.is_pressed:

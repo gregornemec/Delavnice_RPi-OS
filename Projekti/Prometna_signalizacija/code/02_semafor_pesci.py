@@ -20,8 +20,8 @@ p_rdeca = gpiozero.LED(6)
 while True: 
     p_rdeca.on()
     p_zelena.off()
-    time.sleep(3)
+    time.sleep(0.1)
 
     p_rdeca.off()
     p_zelena.on()
-    time.sleep(1)
+    time.sleep(0.1)
