@@ -18,7 +18,10 @@ GPIO.setup(green, GPIO.OUT)
 GPIO.output(red, GPIO.HIGH)
 
 try:
+<<<<<<< HEAD
     
+=======
+>>>>>>> 0005e9779d4e46d193dba9b93339341b1d948cdb
     while True:
         print ('\n')
         red01 = input('red(01):')
@@ -45,5 +48,8 @@ except KeyboardInterrupt:
     GPIO.output(blue, GPIO.HIGH)
     GPIO.output(green, GPIO.HIGH)
     GPIO.cleanup()
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 0005e9779d4e46d193dba9b93339341b1d948cdb
