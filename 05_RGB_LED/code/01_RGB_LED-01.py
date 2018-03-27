@@ -17,7 +17,6 @@ GPIO.setup(green, GPIO.OUT)
 GPIO.output(red, GPIO.HIGH)
 
 try:
-
     while True:
         print ('LEDs on!')
         GPIO.output(red, GPIO.LOW)
@@ -33,6 +32,4 @@ except KeyboardInterrupt:
     GPIO.output(red, GPIO.HIGH)
     GPIO.output(blue, GPIO.HIGH)
     GPIO.output(green, GPIO.HIGH)
-	GPIO.cleanup()
-
-
+    GPIO.cleanup()
