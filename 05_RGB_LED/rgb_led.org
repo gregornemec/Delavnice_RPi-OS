@@ -1,0 +1,66 @@
+#+TITLE: RGB LED
+#+DATE: 28.03.2018
+#+AUTHOR: Gregor Nemec
+#+SETUPFILE: ~/Git/org-html-themes/setup/theme-readtheorg.setup
+#+SETUPFILE: ~/Git/org-html-themes/setup/theme-readtheorg.setup
+#+bind: org-export-publishing-directory "./exports"
+#+OPTIONS: LaTeX:t
+#+OPTIONS: tex:dvipng
+#+OPTIONS: toc:nil 
+#+LANGUAGE: sl
+#+LaTeX_CLASS: article
+#+LaTeX_HEADER: \usepackage[]{babel}
+#+LaTeX_HEADER: \usepackage[a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+#+LaTeX_HEADER: \setlength{\parindent}{0cm}
+
+* Naloge
+  Naša naloga bo, da priklopimo RGB LED Diodo in z njo poskusimo ustvariti čim
+  več barv. Pri tej delavnici bomo spoznali kako uporabimo vhodne podatke za
+  prižiganje in ugašanje različnih barv žarnice. 
+
+* Osnove programiranja
+  Preden nadaljujemo se najprej lotimo osnov programskega jezika Python
+  
+  * Povezava na dokument: 
+  
+* Sestavine
+  Pri projektu bomo potrebovali:
+  * 1x RGB LED anoda
+  * 3x $220 \Ohm$ upornik
+  * več veznih žic
+
+* Vezje
+  Na spodnji sliki je prikazano končno vezje RGB diode. 
+  
+  #+CAPTION: Končna slika vezja z vsemi elementi
+  #+NAME:   fig:REB_sem
+  [[file:breadboard/REB_RES_RGBLED_bb.png][file:/ssh:pi@10.20.10.24:/home/pi/Git/Delavnice_RPi-OS/05_RGB_LED/breadboard/REB_RES_RGBLED_bb.png]]
+
+* Koraki izdelave
+  
+** Priklop RGB Led v vezavo
+   Vezje je na prejšnji sliki. 
+** Spoznavanje RGB LED anode
+   * *POZOR*: Najdaljšo žičko pri RGB LED priklopimo na *$3.3 V$* napetosti.
+
+** Testiranje priklopa
+   Pri testiranju moramo zagotoviti, da se bodo svetile vse lučke. To je takrat
+   ko RGB LED sveti belo svetlobo. 
+
+*** *Naloga*: Testiranje delovanja RGB LED
+    /Napiši program, ki nam omogoča, testiranje priklopa RGB LED. Prižgi vse tri
+    barve v RGB LED. V programu dodaj manjkajoče dele. Bodi pozoren na
+    komentarje in posamezne dele programa, kaj počnejo./
+
+    #+INCLUDE: "./code/00_RGB_LED-01.py" src pythno
+
+** Katere glavne barve lahko prikažemo z RGB LED
+   Zanimalo nas bo katere glavne barve lahko prikažemo z RGB LED. 
+
+*** Naloga: Uporabnik naj določi barve
+    /Zapisano imaš ogrodje programa. Dodaj manjkajoče stavke. Uporabnik z vpisom
+    0 (ugasni) in 1 (prižgi) omogoči vklop in izklop posamezne LED./
+
+    #+INCLUDE: "./code/01_RGB_LED-vmesni.py" src pythno
+
+* Viri in literatura
