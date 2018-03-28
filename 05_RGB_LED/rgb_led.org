@@ -64,3 +64,6 @@
     #+INCLUDE: "./code/01_RGB_LED-vmesni.py" src pythno
 
 * Viri in literatura
+  1. Raspberry Pi GPIO Pinout; https://pinout.xyz/
+
+
