@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="sl" xml:lang="sl">
+<head>
+<!-- 2018-03-28 sre 13:13 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>RGB LED</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Gregor Nemec" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/readtheorg/js/readtheorg.js"></script>
+<link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">RGB LED</h1>
+
+<div id="outline-container-org4320051" class="outline-2">
+<h2 id="org4320051"><span class="section-number-2">1</span> Naloge</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Naša naloga bo, da priklopimo RGB LED Diodo in z njo poskusimo ustvariti čim
+več barv. Pri tej delavnici bomo spoznali kako uporabimo vhodne podatke za
+prižiganje in ugašanje različnih barv žarnice. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf583b28" class="outline-2">
+<h2 id="orgf583b28"><span class="section-number-2">2</span> Osnove programiranja</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Preden nadaljujemo se najprej lotimo osnov programskega jezika Python
+</p>
+
+<ul class="org-ul">
+<li>Povezava na dokument: <a href="file:///home/gregorn/org/OS_Puconci/Priprave/Racunalnistvo/Raspberry-pi/Delavnice%20R-PI%20(O%C5%A0)/Osnove_Python/osnove_python.html">Osnove programskega jezika Python</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5ab508b" class="outline-2">
+<h2 id="org5ab508b"><span class="section-number-2">3</span> Sestavine</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Pri projektu bomo potrebovali:
+</p>
+<ul class="org-ul">
+<li>1x RGB LED anoda</li>
+<li>3x <img src="ltximg/rgb_led_e63102f65c584a86d42d3b915dee89b94317b5af.png" alt="rgb_led_e63102f65c584a86d42d3b915dee89b94317b5af.png" /> upornik</li>
+<li>več veznih žic</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0ad5662" class="outline-2">
+<h2 id="org0ad5662"><span class="section-number-2">4</span> Vezje</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Na spodnji sliki je prikazano končno vezje RGB diode. 
+</p>
+
+
+<div id="org40ab47d" class="figure">
+<p><a href="breadboard/REB_RES_RGBLED_bb.png"><img src="file://ssh:pi@10.20.10.24:/home/pi/Git/Delavnice_RPi-OS/05_RGB_LED/breadboard/REB_RES_RGBLED_bb.png" alt="REB_RES_RGBLED_bb.png" /></a>
+</p>
+<p><span class="figure-number">Slika 1 </span>Končna slika vezja z vsemi elementi</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org43b12f9" class="outline-2">
+<h2 id="org43b12f9"><span class="section-number-2">5</span> Koraki izdelave</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-orgb0d6999" class="outline-3">
+<h3 id="orgb0d6999"><span class="section-number-3">5.1</span> Priklop RGB Led v vezavo</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+Vezje je na prejšnji sliki. 
+</p>
+</div>
+</div>
+<div id="outline-container-org8c3b5d8" class="outline-3">
+<h3 id="org8c3b5d8"><span class="section-number-3">5.2</span> Spoznavanje RGB LED anode</h3>
+<div class="outline-text-3" id="text-5-2">
+<ul class="org-ul">
+<li><b>POZOR</b>: Najdaljšo žičko pri RGB LED priklopimo na <b><img src="ltximg/rgb_led_a6be74d8618b6db769c66e3a1d4fe3aec2dc08a7.png" alt="rgb_led_a6be74d8618b6db769c66e3a1d4fe3aec2dc08a7.png" /></b> napetosti.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0af7aa0" class="outline-3">
+<h3 id="org0af7aa0"><span class="section-number-3">5.3</span> Testiranje priklopa</h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+Pri testiranju moramo zagotoviti, da se bodo svetile vse lučke. To je takrat
+ko RGB LED sveti belo svetlobo. 
+</p>
+</div>
+
+<div id="outline-container-orgdc03d06" class="outline-4">
+<h4 id="orgdc03d06"><span class="section-number-4">5.3.1</span> <b>Naloga</b>: Testiranje delovanja RGB LED</h4>
+<div class="outline-text-4" id="text-5-3-1">
+<p>
+<i>Napiši program, ki nam omogoča, testiranje priklopa RGB LED. Prižgi vse tri
+barve v RGB LED. V programu dodaj manjkajoče dele. Bodi pozoren na
+komentarje in posamezne dele programa, kaj počnejo.</i>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">!/usr/bin/env python</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">-*- coding: utf-8 -*-</span>
+
+<span style="color: #4f97d7; font-weight: bold;">import</span> time
+<span style="color: #4f97d7; font-weight: bold;">import</span> RPi.GPIO <span style="color: #4f97d7; font-weight: bold;">as</span> GPIO
+
+<span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">Vpi&#353;i &#353;tevilke pinov </span>
+<span style="color: #7590db;">red</span> = 
+<span style="color: #7590db;">blue</span> = 
+<span style="color: #7590db;">green</span> = 
+
+<span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">Inicializacija pinov za posamezni priklop</span>
+GPIO.setmode<span style="color: #4f97d7;">(</span>GPIO.BOARD<span style="color: #4f97d7;">)</span>
+GPIO.setup<span style="color: #4f97d7;">(</span>red, GPIO.OUT<span style="color: #4f97d7;">)</span>       <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Dolo&#269;imo na&#269;in pina na izhod.</span>
+GPIO.output<span style="color: #4f97d7;">(</span>red, GPIO.HIGH<span style="color: #4f97d7;">)</span>     <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Napetost na pinu red ugasnemo (HIGH). </span>
+GPIO.setup<span style="color: #4f97d7;">(</span>blue, GPIO.OUT<span style="color: #4f97d7;">)</span>
+GPIO.output<span style="color: #4f97d7;">(</span>blue, GPIO.HIGH<span style="color: #4f97d7;">)</span>
+GPIO.setup<span style="color: #4f97d7;">(</span>green, GPIO.OUT<span style="color: #4f97d7;">)</span>
+GPIO.output<span style="color: #4f97d7;">(</span>green, GPIO.HIGH<span style="color: #4f97d7;">)</span>
+
+<span style="color: #4f97d7; font-weight: bold;">try</span>:
+    <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">Sem vpisujemo programsko kodo.</span>
+    GPIO.output<span style="color: #4f97d7;">(</span>green, GPIO.LOW<span style="color: #4f97d7;">)</span>
+
+
+<span style="color: #4f97d7; font-weight: bold;">except</span> <span style="color: #ce537a; font-weight: bold;">KeyboardInterrupt</span>:
+    GPIO.output<span style="color: #4f97d7;">(</span>red, GPIO.HIGH<span style="color: #4f97d7;">)</span>
+    GPIO.output<span style="color: #4f97d7;">(</span>blue, GPIO.HIGH<span style="color: #4f97d7;">)</span>
+    GPIO.output<span style="color: #4f97d7;">(</span>green, GPIO.HIGH<span style="color: #4f97d7;">)</span>
+    GPIO.cleanup<span style="color: #4f97d7;">()</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org51be6f5" class="outline-3">
+<h3 id="org51be6f5"><span class="section-number-3">5.4</span> Katere glavne barve lahko prikažemo z RGB LED</h3>
+<div class="outline-text-3" id="text-5-4">
+<p>
+Zanimalo nas bo katere glavne barve lahko prikažemo z RGB LED. 
+</p>
+</div>
+
+<div id="outline-container-org33f9cdb" class="outline-4">
+<h4 id="org33f9cdb"><span class="section-number-4">5.4.1</span> Naloga: Uporabnik naj določi barve</h4>
+<div class="outline-text-4" id="text-5-4-1">
+<p>
+<i>Zapisano imaš ogrodje programa. Dodaj manjkajoče stavke. Uporabnik z vpisom
+0 (ugasni) in 1 (prižgi) omogoči vklop in izklop posamezne LED.</i>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">!/usr/bin/env python</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">-*- coding: utf-8 -*-</span>
+
+<span style="color: #4f97d7; font-weight: bold;">import</span> time
+<span style="color: #4f97d7; font-weight: bold;">import</span> RPi.GPIO <span style="color: #4f97d7; font-weight: bold;">as</span> GPIO
+
+<span style="color: #7590db;">red</span> = <span style="color: #a45bad;">11</span>
+<span style="color: #7590db;">blue</span> = <span style="color: #a45bad;">12</span>
+<span style="color: #7590db;">green</span> = <span style="color: #a45bad;">13</span>
+
+<span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">Inicializacija pinov za posamezni priklop</span>
+GPIO.setmode<span style="color: #4f97d7;">(</span>GPIO.BOARD<span style="color: #4f97d7;">)</span>
+GPIO.setup<span style="color: #4f97d7;">(</span>red, GPIO.OUT<span style="color: #4f97d7;">)</span>       <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Dolo&#269;imo na&#269;in pina na izhod.</span>
+GPIO.output<span style="color: #4f97d7;">(</span>red, GPIO.HIGH<span style="color: #4f97d7;">)</span>     <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Napetost na pinu red ugasnemo (HIGH). </span>
+GPIO.setup<span style="color: #4f97d7;">(</span>blue, GPIO.OUT<span style="color: #4f97d7;">)</span>
+GPIO.output<span style="color: #4f97d7;">(</span>blue, GPIO.HIGH<span style="color: #4f97d7;">)</span>
+GPIO.setup<span style="color: #4f97d7;">(</span>green, GPIO.OUT<span style="color: #4f97d7;">)</span>
+GPIO.output<span style="color: #4f97d7;">(</span>green, GPIO.HIGH<span style="color: #4f97d7;">)</span>
+
+<span style="color: #4f97d7; font-weight: bold;">try</span>:
+    <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">Z zanko while True ponavljamo program neskon&#269;no krat.</span>
+    <span style="color: #4f97d7; font-weight: bold;">while</span> <span style="color: #a45bad;">True</span>:
+        <span style="color: #4f97d7; font-weight: bold;">print</span> <span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'\n'</span><span style="color: #4f97d7;">)</span>            <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Izpi&#353;i novo vrstico.</span>
+        <span style="color: #7590db;">red01</span> = <span style="color: #4f97d7;">input</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'red(01):'</span><span style="color: #4f97d7;">)</span>  <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Vpra&#353;aj uporabnika, vrednost 0 za ugasnjeno</span>
+                                   <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">in 1 za pri&#382;gano led</span>
+
+        <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">Dodaj &#353;e za modro in zeleno</span>
+
+     <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">&#268;e je vrednost spremenljivke 0 potem naj je &#382;arnica ugasnjena in &#269;e</span>
+        <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">je vrednost spremenljivke 1 naj je pri&#382;gana</span>
+
+        <span style="color: #4f97d7; font-weight: bold;">if</span> red01 == <span style="color: #a45bad;">1</span>:
+            GPIO.output<span style="color: #4f97d7;">(</span>red, GPIO.LOW<span style="color: #4f97d7;">)</span>
+        <span style="color: #4f97d7; font-weight: bold;">else</span>:
+            GPIO.output<span style="color: #4f97d7;">(</span>red, GPIO.HIGH<span style="color: #4f97d7;">)</span>
+
+        <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">Dodaj &#353;e za modro in zeleno.</span>
+
+
+<span style="color: #4f97d7; font-weight: bold;">except</span> <span style="color: #ce537a; font-weight: bold;">KeyboardInterrupt</span>:
+    <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Za prekinitev programa uporabi kombinacijo C-c. Ko program zazna</span>
+    <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">prekinitev spro&#382;i pokli&#269;e &#353;e spodnje.</span>
+
+    GPIO.output<span style="color: #4f97d7;">(</span>red, GPIO.HIGH<span style="color: #4f97d7;">)</span>  <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Ugasni led</span>
+    GPIO.output<span style="color: #4f97d7;">(</span>blue, GPIO.HIGH<span style="color: #4f97d7;">)</span>
+    GPIO.output<span style="color: #4f97d7;">(</span>green, GPIO.HIGH<span style="color: #4f97d7;">)</span>
+    GPIO.cleanup<span style="color: #4f97d7;">()</span>              <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Po&#269;isti GPIO.</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgeb07110" class="outline-2">
+<h2 id="orgeb07110"><span class="section-number-2">6</span> Viri in literatura</h2>
+<div class="outline-text-2" id="text-6">
+<ol class="org-ol">
+<li>Raspberry Pi GPIO Pinout; <a href="https://pinout.xyz/">https://pinout.xyz/</a></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Datum: 28.03.2018</p>
+<p class="author">Avtor: Gregor Nemec</p>
+<p class="date">Ustvarjeno: 2018-03-28 sre 13:13</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

@@ -21,7 +21,7 @@
 * Osnove programiranja
   Preden nadaljujemo se najprej lotimo osnov programskega jezika Python
   
-  * Povezava na dokument: 
+  * Povezava na dokument: [[file:~/org/OS_Puconci/Priprave/Racunalnistvo/Raspberry-pi/Delavnice%20R-PI%20(O%C5%A0)/Osnove_Python/osnove_python.html][Osnove programskega jezika Python]]
   
 * Sestavine
   Pri projektu bomo potrebovali:
@@ -52,7 +52,7 @@
     barve v RGB LED. V programu dodaj manjkajoče dele. Bodi pozoren na
     komentarje in posamezne dele programa, kaj počnejo./
 
-    #+INCLUDE: "./code/00_RGB_LED-01.py" src pythno
+    #+INCLUDE: "./code/00_RGB_LED-01.py" src python
 
 ** Katere glavne barve lahko prikažemo z RGB LED
    Zanimalo nas bo katere glavne barve lahko prikažemo z RGB LED. 
@@ -61,7 +61,7 @@
     /Zapisano imaš ogrodje programa. Dodaj manjkajoče stavke. Uporabnik z vpisom
     0 (ugasni) in 1 (prižgi) omogoči vklop in izklop posamezne LED./
 
-    #+INCLUDE: "./code/01_RGB_LED-vmesni.py" src pythno
+    #+INCLUDE: "./code/01_RGB_LED-vmesni.py" src python
 
 * Viri in literatura
   1. Raspberry Pi GPIO Pinout; https://pinout.xyz/
