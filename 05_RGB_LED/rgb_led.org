@@ -63,6 +63,22 @@
 
     #+INCLUDE: "./code/01_RGB_LED-vmesni.py" src python
 
+
+** Priklop potisnih gumbov
+   V prejšnjem koraku smo za pridobitev podatkov, če je naj določena barva
+   prižgana, prebrali informacije s tipkovnice z ukazom =input()=. V
+   nadaljevanju bomo v vezje vključili stikala, ki bodo krmilila vklop barv RGB
+   LED. 
+
+*** Potisni gumbi
+    
+*** Nadgradnja vezja s stikali (potisnimi gumbi)
+    
+*** Naloga: Pritisnjen gumbi
+    #+INCLUDE: "./code/02_RGB_LED-Gumb.py" src python
+
+
+
 * Viri in literatura
   1. Raspberry Pi GPIO Pinout; https://pinout.xyz/
 
