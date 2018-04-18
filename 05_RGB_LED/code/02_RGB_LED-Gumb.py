@@ -5,7 +5,7 @@ import time
 import RPi.GPIO as GPIO
 
 red = 11
-blue = 12
+blue = 13
 green = 13
 
 # Inicializacija pinov za posamezni priklop
@@ -19,22 +19,45 @@ GPIO.output(green, GPIO.HIGH)
 
 
 # Inicializacija gumba
-GPIO.setup(25, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(36, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(38, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(40, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+# Inicializacijo dodaj se za ostala gumba
+
 
 try:
     # Z zanko while True ponavljamo program neskončno krat.
     while True:
-        print('\n')            # Izpiši novo vrstico.
-        red01 = input('red(01):')  # Vprašaj uporabnika, vrednost 0 za
-                                   # ugasnjeno in 1 za prižgano led
+        # Preverjaj stanje gumbov
+        rdec_pritisnjen = GPIO.input(36)
+        zelen_pritisnjen = GPIO.input(38)
+        moder_pritisnjen = GPIO.input(40)
 
-        # Če je vrednost spremenljivke 0 potem naj je žarnica ugasnjena in če
-        # je vrednost spremenljivke 1 naj je prižgana
-
-        if GPIO.input(25) == False:
+        # Vklop rdece
+        if rdec_pritisnjen == False:
+            print('Rdeč je pritisnjen!')
             GPIO.output(red, GPIO.LOW)
+            time.sleep(0.2)
         else:
             GPIO.output(red, GPIO.HIGH)
+            
+        # Vklop zelene
+        if zelen_pritisnjen == False:
+            print('Zelen je pritisnjen!')
+            GPIO.output(green, GPIO.LOW)
+            time.sleep(0.2)
+        else:
+            GPIO.output(green, GPIO.HIGH)
+
+        # Vklop modre
+        if moder_pritisnjen == False:
+            print('Moder je pritisnjen!')
+            GPIO.output(blue, GPIO.LOW)
+            time.sleep(0.2)
+        else:
+            GPIO.output(blue, GPIO.HIGH)
+
 
 except KeyboardInterrupt:
     # Za prekinitev programa uporabi kombinacijo C-c. Ko program zazna
