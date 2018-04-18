@@ -34,7 +34,7 @@
   
   #+CAPTION: Končna slika vezja z vsemi elementi
   #+NAME:   fig:REB_sem
-  [[file:breadboard/REB_RES_RGBLED_bb.png][file:/ssh:pi@10.20.10.24:/home/pi/Git/Delavnice_RPi-OS/05_RGB_LED/breadboard/REB_RES_RGBLED_bb.png]]
+  [[file:breadboard/REB_RES_RGBLED_bb.png]]
 
 * Koraki izdelave
   
@@ -71,19 +71,28 @@
    LED. b
 
 *** Potisni gumbi
-    
+    Je stikalo ki sklene električni krog. Tega lahko uporabimo kot vhod. 
+
+    #+CAPTION: Delovanje gumba in shema sklenitve električnega kroga.
+    #+NAME:   fig:REB_sem
+    [[file:images/button01.jpg]]
+
+
 *** Nadgradnja vezja s stikali (potisnimi gumbi)
 
-    #+CAPTION: Končna slika vezja z vsemi elementi
+    #+CAPTION: Vezje s potisnimi gumbi
     #+NAME:   fig:REB_sem
-    [[file:breadboard/REB_RES_RGBLED_bb.png][file:/ssh:pi@10.20.10.24:/home/pi/Git/Delavnice_RPi-OS/05_RGB_LED/breadboard/REB_RES_RGBLED_bb.png]]
-    
+    [[file:breadboard/REB_RES_RGBLED_bb.png]]
+
 *** Naloga: Pritisnjen gumbi
-    #+INCLUDE: "./code/02_RGB_LED-Gumb.py" src python
+    #+INCLUDE: "./code/02_RGB_LED-gumb.py" src python
 
 
 
 * Viri in literatura
   1. Raspberry Pi GPIO Pinout; https://pinout.xyz/
+  2. https://www.hackster.io/hardikrathod/push-button-with-raspberry-pi-6b6928
+
+
 
 
