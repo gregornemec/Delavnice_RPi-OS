@@ -90,7 +90,7 @@
 
     #+INCLUDE: "./code/02_RGB_LED-gumb.py" src python
 
-*** Naloga: Stikalo s potisnim gumbom
+*** Naloga: Prižgi ugasni stikalo  s potisnim gumbom
     Stikalo pomeni, da ko gum pritisnemo se posamezna barva prižge. Ko ga
     pritisnemo drugič se led ugasne. 
 
