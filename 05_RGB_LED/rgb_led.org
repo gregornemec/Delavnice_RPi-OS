@@ -29,6 +29,7 @@
   * 3x $220 \Ohm$ upornik
   * več veznih žic
 
+
 * Vezje
   Na spodnji sliki je prikazano končno vezje RGB diode. 
   
@@ -40,6 +41,7 @@
   
 ** Priklop RGB Led v vezavo
    Vezje je na prejšnji sliki. 
+
 ** Spoznavanje RGB LED anode
    * *POZOR*: Najdaljšo žičko pri RGB LED priklopimo na *$3.3 V$* napetosti.
 
@@ -63,12 +65,11 @@
 
     #+INCLUDE: "./code/01_RGB_LED-vmesni.py" src python
 
-
 ** Priklop potisnih gumbov
    V prejšnjem koraku smo za pridobitev podatkov, če je naj določena barva
    prižgana, prebrali informacije s tipkovnice z ukazom =input()=. V
    nadaljevanju bomo v vezje vključili stikala, ki bodo krmilila vklop barv RGB
-   LED. b
+   LED.
 
 *** Potisni gumbi
     Je stikalo ki sklene električni krog. Tega lahko uporabimo kot vhod. 
@@ -79,10 +80,10 @@
 
 
 *** Nadgradnja vezja s stikali (potisnimi gumbi)
-
+    
     #+CAPTION: Vezje s potisnimi gumbi
     #+NAME:   fig:REB_sem
-    [[file:breadboard/REB_RES_RGBLED_bb.png]]
+    [[file:breadboard/REB_RES_RGBLED_3Buttons.png]]
 
 *** Naloga: Pritisnjen gumbi
     Dobro si oglej delovanje programa, program dokončaj tako da bo za vsak gumb
@@ -90,16 +91,19 @@
 
     #+INCLUDE: "./code/02_RGB_LED-gumb.py" src python
 
-*** Naloga: Prižgi ugasni stikalo  s potisnim gumbom
+*** Naloga: Prižgi/ugasni stikalo s potisnim gumbom
     Stikalo pomeni, da ko gum pritisnemo se posamezna barva prižge. Ko ga
     pritisnemo drugič se led ugasne. 
 
-    Logika delovanja programa bo naslednja, in bomo morali shranjevati vrednost
-    za vklop ali izklop barve LED. Če barva LED ni prižgana jo moramo prižgati
-    in si to zapomniti na primer z zapisom spremenljivke na vrednost 1. V
-    kolikor je luč že prižgana jo ugasnemo in vrednost spremenimo na 0.
+    Logika delovanja programa bo morala biti naslednja, dodati bomo morali
+    spremenljivke v katerih bomo shranjevali stanje vklop ali izklop barve LED.
+    Če barva LED ni prižgana jo moramo prižgati in si to zapomniti, na primer z
+    zapisom spremenljivke na vrednost 1. V kolikor je luč že prižgana jo
+    ugasnemo in vrednost spremenimo na 0.
 
     #+INCLUDE: "./code/03_RGB_LED-gumb.stikalo.py" src python
+
+    # /To bi se mogoče dalo rešitti tudi s funkcijo ~GPIO.input()~/
 
 * Viri in literatura
   1. Raspberry Pi GPIO Pinout; https://pinout.xyz/
