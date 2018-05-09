@@ -1,0 +1,27 @@
+#+TITLE: 10 led lučk
+#+DATE: 09.05.2018
+#+AUTHOR: Gregor Nemec
+#+SETUPFILE: ~/Git/org-html-themes/setup/theme-readtheorg.setup
+#+SETUPFILE: ~/Git/org-html-themes/setup/theme-readtheorg.setup
+#+bind: org-export-publishing-directory "./exports"
+#+OPTIONS: LaTeX:t
+#+OPTIONS: tex:dvipng
+#+OPTIONS: toc:nil 
+#+LANGUAGE: sl
+#+LaTeX_CLASS: article
+#+LaTeX_HEADER: \usepackage[]{babel}
+#+LaTeX_HEADER: \usepackage[a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+#+LaTeX_HEADER: \setlength{\parindent}{0cm}
+
+* Naloga
+
+* Osnove programiranja
+
+* Sestavine
+  Pri projektu bomo potrebovali:
+  * 10x $220\Ohm$ uporanik
+  * 10x LED razlčičnih barv
+  * več veznih žic
+
+* Vezje
+  
