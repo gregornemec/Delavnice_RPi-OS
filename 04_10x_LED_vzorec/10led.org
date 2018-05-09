@@ -15,7 +15,13 @@
 
 * Naloga
 
+  Spoznali bomo kako na prototipno ploščo priklopimo 10 LED diod in jih krmilimo
+  s programskim jezikom python.
+
 * Osnove programiranja
+  Preden nadaljujemo se najprej lotimo osnov programskega jezika Python
+  # V datoteko Osnove programiranja dodaj še sezman, funkcije in for zanko.
+  * Povezava na dokument: [[file:/ssh:pi@10.30.1.85:/home/pi/Git/Delavnice_RPi-OS/Osnove_Python/osnove_python.html][Osnove programskega jezika Python]]
 
 * Sestavine
   Pri projektu bomo potrebovali:
@@ -24,4 +30,29 @@
   * več veznih žic
 
 * Vezje
+  Vezje na prototipni plošči pripravimo tako, da napetost $3.3 V$ povežemo s
+  eno + povezavo. Nato upornik vežemo na eno izmed nogic LED, drugo nogico LED
+  diode povežemo s žico na GPIO stikalo. 
+
+  *Priporočilo*: Posamezne LED diode poveži z GPIO po vrsti, tako da bo prva
+  povezana na pinu 7, druga na pinu 11 in tako dalje. S tem si boš zagotovil
+  lažji redosled pri nastavljanju LED v programu. 
   
+  #+CAPTION: Slika vezja priklopa desetih led diod z #220 \Ohm# upornikom. 
+  #+NAME:   fig:REB_sem
+  [[file:breadboard/REB_RES_10xLED.png]]
+
+* Koraki izdelave
+
+** Sestavljanje vezja
+   Po sliki vezja dodaj LED in upornike na prototipno ploščo.
+
+** Testiranje vezja programa
+   Najprej bomo zapisali program s katerim bomo testirali delovanje vezja
+   posamezne LED diode. V naslednjem primeru bomo spoznali tri nove programske
+   stavke s katerimi si bomo v prihodnje olajšali delo. Namesto spremenljivk
+   bomo uporabili *Seznam*, napisali si bomo lastne *podprograme* ali
+   *funkcije*, za delo s seznamom bomo uporabili zanko ~for~. V urejevalnik
+   besedil IDLE kopiraj spodnjo programsko kodo. 
+
+   #+INCLUDE: "./code/00_10LED_testing1.py" src python
