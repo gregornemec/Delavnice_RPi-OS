@@ -52,20 +52,18 @@ def ugasni_LED(n):
         print(n, "presega stevilo priklopljenih luck.")
 
 
-def tekoce_naprej_LED():
+def tekoce_LED_naprej():
     for n in range(len(pins)):
         prizgi_LED(n)
-
-        if n > 0 and n < len(pins):
-            ugasni_LED(n-1)
-
-
+        time.sleep(0.2)
+        ugasni_LED(n)
 
 
 try:
     nastavi()
     while True:
         # Dopolni program tako, da bodo utripale vse lučke.
-        pass
+        tekoce_LED_naprej()
+
 except KeyboardInterrupt:
     pocisti()
