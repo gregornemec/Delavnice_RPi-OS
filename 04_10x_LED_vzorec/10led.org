@@ -69,9 +69,41 @@
    Napisali smo podprograme za prižiganje vseh lučk, kako bomo prižgali
    posamezno lučko, katere pin smo zapisali v seznamu. 
 
-   #+INCLUDE: "./code/02_10LED_koncen.py" src python :lines "37-43"
+   #+INCLUDE: "./code/02_10LED_koncen.py" src python :lines "39-45"
 
    Napišimo še podprogram, ki ugasne posamezno LED. 
 
-   #+INCLUDE: "./code/02_10LED_koncen.py" src python :lines "44-51"
+   #+INCLUDE: "./code/02_10LED_koncen.py" src python :lines "46-53"
+
+** Vzorec prižiganja in ugašanja
+   V glavnem programu naredi vzorec prižiganja in ugašanja. Primer vzorca.
+   Uporabi podprograme, ki si jih napisal. Ali bi znal vzorec napisati v svojem
+   podprogramu. 
+
+   #+BEGIN_SRC python
+     while True:
+         prizgi_LED(2)
+         prizgi_LED(4)
+         prizgi_LED(6)
+         prizgi_LED(8)
+
+         time.sleep(0.2)
+         ugasni_vse()
+
+         prizgi_LED(1)
+         prizgi_LED(3)
+         prizgi_LED(5)
+         prizgi_LED(7)
+
+         time.sleep(0.2)
+         ugasni_vse()
+   #+END_SRC
+
+** Tekoče LED
+   Napiši pod program, ki omogoča tekoče prižiganje LED po vrsti. Razmisli kako
+   bi naredil, da se potujeta dve lučki hkrati. 
+
+   #+INCLUDE: "./code/02_10LED_koncen.py" src python :lines "55-56"
+
+   
 

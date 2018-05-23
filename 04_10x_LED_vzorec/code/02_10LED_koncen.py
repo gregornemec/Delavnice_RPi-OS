@@ -55,7 +55,7 @@ def ugasni_LED(n):
 def tekoce_LED_naprej():
     for n in range(len(pins)):
         prizgi_LED(n)
-        prizgi_LED(n+1)
+
         time.sleep(0.2)
         ugasni_LED(n)
         ugasni_LED(n+1)

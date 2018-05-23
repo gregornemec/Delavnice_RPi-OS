@@ -13,7 +13,7 @@ def nastavi():
 
     GPIO.setmode(GPIO.BOARD)
     for pin in pins:
-        GPIO.setup(pin, GPIO.out)
+        GPIO.setup(pin, GPIO.OUT)
 
     ugasni_vse()
 
