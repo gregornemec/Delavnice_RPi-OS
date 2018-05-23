@@ -2,7 +2,6 @@
 #+DATE: 09.05.2018
 #+AUTHOR: Gregor Nemec
 #+SETUPFILE: ~/Git/org-html-themes/setup/theme-readtheorg.setup
-#+SETUPFILE: ~/Git/org-html-themes/setup/theme-readtheorg.setup
 #+bind: org-export-publishing-directory "./exports"
 #+OPTIONS: LaTeX:t
 #+OPTIONS: tex:dvipng
@@ -13,6 +12,8 @@
 #+LaTeX_HEADER: \usepackage[a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
 #+LaTeX_HEADER: \setlength{\parindent}{0cm}
 
+
+
 * Naloga
 
   Spoznali bomo kako na prototipno ploščo priklopimo 10 LED diod in jih krmilimo
@@ -21,16 +22,16 @@
 * Osnove programiranja
   Preden nadaljujemo se najprej lotimo osnov programskega jezika Python
   # V datoteko Osnove programiranja dodaj še sezman, funkcije in for zanko.
-  * Povezava na dokument: [[file:/ssh:pi@10.30.1.85:/home/pi/Git/Delavnice_RPi-OS/Osnove_Python/osnove_python.html][Osnove programskega jezika Python]]
+  * Povezava na dokument: [[file:/ssh:pi@10.30.1.85:/home/pi/Git/Delavnice_RPi-OS/Osnove_Python/osnove_python.html][Osnove sprogramskega jezika Python]]
 
 * Sestavine
   Pri projektu bomo potrebovali:
-  * 10x $220\Ohm$ uporanik
+  * 10x $220 \omega $ upornik
   * 10x LED razlčičnih barv
   * več veznih žic
 
 * Vezje
-  Vezje na prototipni plošči pripravimo tako, da napetost $3.3 V$ povežemo s
+   Vezje na prototipni plošči pripravimo tako, da napetost $3.3 V$ povežemo s
   eno + povezavo. Nato upornik vežemo na eno izmed nogic LED, drugo nogico LED
   diode povežemo s žico na GPIO stikalo. 
 
@@ -38,9 +39,9 @@
   povezana na pinu 7, druga na pinu 11 in tako dalje. S tem si boš zagotovil
   lažji redosled pri nastavljanju LED v programu. 
   
-  #+CAPTION: Slika vezja priklopa desetih led diod z #220 \Ohm# upornikom. 
+  #+CAPTION: Slika vezja priklopa desetih led diod z #220 \omega# upornikom. 
   #+NAME:   fig:REB_sem
-  [[file:breadboard/REB_RES_10xLED.png]]
+  [[file:breadboard/REB_RES_10xLED_bb.png]]
 
 * Koraki izdelave
 
@@ -56,3 +57,21 @@
    besedil IDLE kopiraj spodnjo programsko kodo. 
 
    #+INCLUDE: "./code/00_10LED_testing1.py" src python
+
+** Utripanje lučk
+   V glavnem delu programa omogoči utripanje vseh lučk. Kopiraj si preostali del
+   programa in tega dopolni v delu programa ~try~.
+
+   #+INCLUDE: "./code/01_10LED_utripanje_vseh.py" src python
+
+** Podprogram za prižiganje posamezne lučke
+
+   Napisali smo podprograme za prižiganje vseh lučk, kako bomo prižgali
+   posamezno lučko, katere pin smo zapisali v seznamu. 
+
+   #+INCLUDE: "./code/02_10LED_koncen.py" src python :lines "37-43"
+
+   Napišimo še podprogram, ki ugasne posamezno LED. 
+
+   #+INCLUDE: "./code/02_10LED_koncen.py" src python :lines "44-51"
+

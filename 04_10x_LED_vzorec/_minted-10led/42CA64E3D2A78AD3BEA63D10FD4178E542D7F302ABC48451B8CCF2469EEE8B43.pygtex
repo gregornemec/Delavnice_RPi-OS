@@ -1,0 +1,42 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}!/usr/bin/env python}
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}*\PYGZhy{} coding: utf\PYGZhy{}8 \PYGZhy{}*\PYGZhy{}}
+
+\PYG{k+kn}{import} \PYG{n+nn}{time}
+\PYG{k+kn}{import} \PYG{n+nn}{RPi.GPIO} \PYG{k+kn}{as} \PYG{n+nn}{GPIO}
+
+\PYG{c+c1}{\PYGZsh{} Shranjevanje posameznih priklopov LED na GPIO v seznamu}
+
+\PYG{n}{pins} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{7}\PYG{p}{,} \PYG{l+m+mi}{11}\PYG{p}{,} \PYG{l+m+mi}{12}\PYG{p}{,} \PYG{l+m+mi}{13}\PYG{p}{,} \PYG{l+m+mi}{15}\PYG{p}{,} \PYG{l+m+mi}{16}\PYG{p}{,} \PYG{l+m+mi}{18}\PYG{p}{,} \PYG{l+m+mi}{22}\PYG{p}{,}  \PYG{l+m+mi}{29}\PYG{p}{,} \PYG{l+m+mi}{31}\PYG{p}{]}
+
+\PYG{k}{def} \PYG{n+nf}{nastavi}\PYG{p}{():}
+    \PYG{l+s+sd}{\PYGZsq{}\PYGZsq{}\PYGZsq{}Nastavljanje začetnih nastavitev.\PYGZsq{}\PYGZsq{}\PYGZsq{}}
+
+    \PYG{n}{GPIO}\PYG{o}{.}\PYG{n}{setmode}\PYG{p}{(}\PYG{n}{GPIO}\PYG{o}{.}\PYG{n}{BOARD}\PYG{p}{)}
+    \PYG{k}{for} \PYG{n}{pin} \PYG{o+ow}{in} \PYG{n}{pins}\PYG{p}{:}
+        \PYG{n}{GPIO}\PYG{o}{.}\PYG{n}{setup}\PYG{p}{(}\PYG{n}{pin}\PYG{p}{,} \PYG{n}{GPIO}\PYG{o}{.}\PYG{n}{out}\PYG{p}{)}
+
+    \PYG{n}{ugasni\PYGZus{}vse}\PYG{p}{()}
+
+\PYG{k}{def} \PYG{n+nf}{pocisti}\PYG{p}{():}
+    \PYG{l+s+sd}{\PYGZsq{}\PYGZsq{}\PYGZsq{}Pocisti za konec programa.\PYGZsq{}\PYGZsq{}\PYGZsq{}}
+    \PYG{n}{ugasni\PYGZus{}vse}\PYG{p}{()}
+    \PYG{n}{GPIO}\PYG{o}{.}\PYG{n}{cleanup}\PYG{p}{()}
+
+\PYG{k}{def} \PYG{n+nf}{prizgi\PYGZus{}vse}\PYG{p}{():}
+    \PYG{k}{for} \PYG{n}{pin} \PYG{o+ow}{in} \PYG{n}{pins}\PYG{p}{:}
+        \PYG{n}{GPIO}\PYG{o}{.}\PYG{n}{output}\PYG{p}{(}\PYG{n}{pin}\PYG{p}{,} \PYG{n}{GPIO}\PYG{o}{.}\PYG{n}{LOW}\PYG{p}{)}
+        \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Prizgan pin\PYGZsq{}}\PYG{p}{,} \PYG{n}{pin}\PYG{p}{)}
+
+\PYG{k}{def} \PYG{n+nf}{ugasni\PYGZus{}vse}\PYG{p}{():}
+    \PYG{k}{for} \PYG{n}{pin} \PYG{o+ow}{in} \PYG{n}{pins}\PYG{p}{:}
+        \PYG{n}{GPIO}\PYG{o}{.}\PYG{n}{output}\PYG{p}{(}\PYG{n}{pin}\PYG{p}{,} \PYG{n}{GPIO}\PYG{o}{.}\PYG{n}{HIGH}\PYG{p}{)}
+        \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Ugasnjen pin\PYGZsq{}}\PYG{p}{,} \PYG{n}{pin}\PYG{p}{)}
+\PYG{k}{try}\PYG{p}{:}
+    \PYG{n}{nastavi}\PYG{p}{()}
+    \PYG{k}{while} \PYG{n+nb+bp}{True}\PYG{p}{:}
+        \PYG{c+c1}{\PYGZsh{} Dopolni program tako, da bodo utripale vse lučke.}
+        \PYG{k}{pass}
+\PYG{k}{except} \PYG{n+ne}{KeyboardInterrupt}\PYG{p}{:}
+    \PYG{n}{pocisti}\PYG{p}{()}
+\end{Verbatim}

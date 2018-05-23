@@ -13,6 +13,7 @@ def nastavi():
 
     GPIO.setmode(GPIO.BOARD)
     for pin in pins:
+        GPIO.setup(pin, GPIO.OUT)
         GPIO.output(pin, GPIO.HIGH)
         print('Ugasnjen pin', pin)
 

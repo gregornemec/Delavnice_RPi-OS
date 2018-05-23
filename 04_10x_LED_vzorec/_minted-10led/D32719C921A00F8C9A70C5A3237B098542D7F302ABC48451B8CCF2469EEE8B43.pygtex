@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{ugasni\PYGZus{}LED}\PYG{p}{(}\PYG{n}{n}\PYG{p}{):}
+    \PYG{k}{if} \PYG{n}{n} \PYG{o}{\PYGZlt{}} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{pins}\PYG{p}{):}
+        \PYG{n}{GPIO}\PYG{o}{.}\PYG{n}{output}\PYG{p}{(}\PYG{n}{pins}\PYG{p}{[}\PYG{n}{n}\PYG{p}{],} \PYG{n}{GPIO}\PYG{o}{.}\PYG{n}{LOW}\PYG{p}{)}
+    \PYG{k}{else}\PYG{p}{:}
+        \PYG{k}{print}\PYG{p}{(}\PYG{n}{n}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}presega stevilo priklopljenih luck.\PYGZdq{}}\PYG{p}{)}
+\end{Verbatim}

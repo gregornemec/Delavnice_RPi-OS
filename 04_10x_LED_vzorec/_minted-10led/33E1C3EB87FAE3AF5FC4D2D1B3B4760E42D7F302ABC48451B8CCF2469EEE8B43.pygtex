@@ -1,0 +1,37 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}!/usr/bin/env python}
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}*\PYGZhy{} coding: utf\PYGZhy{}8 \PYGZhy{}*\PYGZhy{}}
+
+\PYG{k+kn}{import} \PYG{n+nn}{time}
+\PYG{k+kn}{import} \PYG{n+nn}{RPi.GPIO} \PYG{k+kn}{as} \PYG{n+nn}{GPIO}
+
+\PYG{c+c1}{\PYGZsh{} Shranjevanje posameznih priklopov LED na GPIO v seznamu}
+
+\PYG{n}{pins} \PYG{o}{=} \PYG{p}{[]}
+
+\PYG{k}{def} \PYG{n+nf}{nastavi}\PYG{p}{():}
+    \PYG{l+s+sd}{\PYGZsq{}\PYGZsq{}\PYGZsq{}Nastavljanje začetnih nastavitev.\PYGZsq{}\PYGZsq{}\PYGZsq{}}
+
+    \PYG{n}{GPIO}\PYG{o}{.}\PYG{n}{setmode}\PYG{p}{(}\PYG{n}{GPIO}\PYG{o}{.}\PYG{n}{BOARD}\PYG{p}{)}
+    \PYG{k}{for} \PYG{n}{pin} \PYG{o+ow}{in} \PYG{n}{pins}\PYG{p}{:}
+        \PYG{n}{GPIO}\PYG{o}{.}\PYG{n}{setup}\PYG{p}{(}\PYG{n}{pin}\PYG{p}{,} \PYG{n}{GPIO}\PYG{o}{.}\PYG{n}{OUT}\PYG{p}{)}
+        \PYG{n}{GPIO}\PYG{o}{.}\PYG{n}{output}\PYG{p}{(}\PYG{n}{pin}\PYG{p}{,} \PYG{n}{GPIO}\PYG{o}{.}\PYG{n}{HIGH}\PYG{p}{)}
+        \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Ugasnjen pin\PYGZsq{}}\PYG{p}{,} \PYG{n}{pin}\PYG{p}{)}
+
+\PYG{k}{def} \PYG{n+nf}{pocisti}\PYG{p}{():}
+    \PYG{l+s+sd}{\PYGZsq{}\PYGZsq{}\PYGZsq{}Pocisti za konec programa.\PYGZsq{}\PYGZsq{}\PYGZsq{}}
+    \PYG{k}{for} \PYG{n}{pin} \PYG{o+ow}{in} \PYG{n}{pins}\PYG{p}{:}
+        \PYG{n}{GPIO}\PYG{o}{.}\PYG{n}{output}\PYG{p}{(}\PYG{n}{pin}\PYG{p}{,} \PYG{n}{GPIO}\PYG{o}{.}\PYG{n}{HIGH}\PYG{p}{)}
+        \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Ugasnjen pin\PYGZsq{}}\PYG{p}{,} \PYG{n}{pin}\PYG{p}{)}
+    \PYG{n}{GPIO}\PYG{o}{.}\PYG{n}{cleanup}\PYG{p}{()}
+
+\PYG{k}{def} \PYG{n+nf}{prizgi\PYGZus{}vse}\PYG{p}{():}
+    \PYG{l+s+sd}{\PYGZsq{}\PYGZsq{}\PYGZsq{}Fukcija prizge vse LED diode, ki so podane v seznamu\PYGZsq{}\PYGZsq{}\PYGZsq{}}
+
+
+\PYG{k}{try}\PYG{p}{:}
+    \PYG{c+c1}{\PYGZsh{} Zapišemo glavni del programa}
+
+\PYG{k}{except} \PYG{n+ne}{KeyboardInterrupt}\PYG{p}{:}
+    \PYG{n}{pocisti}\PYG{p}{()}
+\end{Verbatim}

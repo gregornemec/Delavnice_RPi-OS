@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="sl" xml:lang="sl">
 <head>
-<!-- 2018-05-09 sre 13:25 -->
+<!-- 2018-05-23 sre 12:13 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>10 led lučk</title>
@@ -186,12 +186,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
 <script type="text/javascript" src="https://www.pirilampo.org/styles/readtheorg/js/readtheorg.js"></script>
-<link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/readtheorg/css/htmlize.css"/>
-<link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/readtheorg/css/readtheorg.css"/>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="https://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
-<script type="text/javascript" src="https://www.pirilampo.org/styles/readtheorg/js/readtheorg.js"></script>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -243,8 +237,10 @@ for the JavaScript code in this tag.
 <div id="content">
 <h1 class="title">10 led lučk</h1>
 
-<div id="outline-container-orgb919e91" class="outline-2">
-<h2 id="orgb919e91"><span class="section-number-2">1</span> Naloga</h2>
+
+
+<div id="outline-container-orga0e6e88" class="outline-2">
+<h2 id="orga0e6e88"><span class="section-number-2">1</span> Naloga</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Spoznali bomo kako na prototipno ploščo priklopimo 10 LED diod in jih krmilimo
@@ -253,38 +249,38 @@ s programskim jezikom python.
 </div>
 </div>
 
-<div id="outline-container-org9c98303" class="outline-2">
-<h2 id="org9c98303"><span class="section-number-2">2</span> Osnove programiranja</h2>
+<div id="outline-container-orgbb679dd" class="outline-2">
+<h2 id="orgbb679dd"><span class="section-number-2">2</span> Osnove programiranja</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Preden nadaljujemo se najprej lotimo osnov programskega jezika Python
 </p>
 
 <ul class="org-ul">
-<li>Povezava na dokument: <a href="file://ssh:pi@10.30.1.85:/home/pi/Git/Delavnice_RPi-OS/Osnove_Python/osnove_python.html">Osnove programskega jezika Python</a></li>
+<li>Povezava na dokument: <a href="file://ssh:pi@10.30.1.85:/home/pi/Git/Delavnice_RPi-OS/Osnove_Python/osnove_python.html">Osnove sprogramskega jezika Python</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgec662e5" class="outline-2">
-<h2 id="orgec662e5"><span class="section-number-2">3</span> Sestavine</h2>
+<div id="outline-container-org5a085ce" class="outline-2">
+<h2 id="org5a085ce"><span class="section-number-2">3</span> Sestavine</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Pri projektu bomo potrebovali:
 </p>
 <ul class="org-ul">
-<li>10x <img src="ltximg/10led_9ae6b5aff754cb746461a1aa61f00c927eb1115d.png" alt="10led_9ae6b5aff754cb746461a1aa61f00c927eb1115d.png" /> uporanik</li>
+<li>10x $220 &omega; $ upornik</li>
 <li>10x LED razlčičnih barv</li>
 <li>več veznih žic</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgc19af53" class="outline-2">
-<h2 id="orgc19af53"><span class="section-number-2">4</span> Vezje</h2>
+<div id="outline-container-org5d7ffa3" class="outline-2">
+<h2 id="org5d7ffa3"><span class="section-number-2">4</span> Vezje</h2>
 <div class="outline-text-2" id="text-4">
 <p>
-Vezje na prototipni plošči pripravimo tako, da napetost <img src="ltximg/10led_a6be74d8618b6db769c66e3a1d4fe3aec2dc08a7.png" alt="10led_a6be74d8618b6db769c66e3a1d4fe3aec2dc08a7.png" /> povežemo s
+ Vezje na prototipni plošči pripravimo tako, da napetost <img src="ltximg/10led_d36f14c969e5c43a0ce6756e89fd7d27f57053f1.png" alt="10led_d36f14c969e5c43a0ce6756e89fd7d27f57053f1.png" /> povežemo s
 eno + povezavo. Nato upornik vežemo na eno izmed nogic LED, drugo nogico LED
 diode povežemo s žico na GPIO stikalo. 
 </p>
@@ -296,20 +292,20 @@ lažji redosled pri nastavljanju LED v programu.
 </p>
 
 
-<div id="org2616eac" class="figure">
-<p><img src="breadboard/REB_RES_10xLED.png" alt="REB_RES_10xLED.png" />
+<div id="org85fe9ee" class="figure">
+<p><img src="breadboard/REB_RES_10xLED_bb.png" alt="REB_RES_10xLED_bb.png" />
 </p>
-<p><span class="figure-number">Slika 1 </span>Slika vezja priklopa desetih led diod z #220 # upornikom.</p>
+<p><span class="figure-number">Slika 1 </span>Slika vezja priklopa desetih led diod z #220 &omega;# upornikom.</p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org72bdab9" class="outline-2">
-<h2 id="org72bdab9"><span class="section-number-2">5</span> Koraki izdelave</h2>
+<div id="outline-container-orgdb8d337" class="outline-2">
+<h2 id="orgdb8d337"><span class="section-number-2">5</span> Koraki izdelave</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-org622fd09" class="outline-3">
-<h3 id="org622fd09"><span class="section-number-3">5.1</span> Sestavljanje vezja</h3>
+<div id="outline-container-org2390f29" class="outline-3">
+<h3 id="org2390f29"><span class="section-number-3">5.1</span> Sestavljanje vezja</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 Po sliki vezja dodaj LED in upornike na prototipno ploščo.
@@ -317,8 +313,8 @@ Po sliki vezja dodaj LED in upornike na prototipno ploščo.
 </div>
 </div>
 
-<div id="outline-container-org205fb1d" class="outline-3">
-<h3 id="org205fb1d"><span class="section-number-3">5.2</span> Testiranje vezja programa</h3>
+<div id="outline-container-orgcb0e480" class="outline-3">
+<h3 id="orgcb0e480"><span class="section-number-3">5.2</span> Testiranje vezja programa</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
 Najprej bomo zapisali program s katerim bomo testirali delovanje vezja
@@ -345,6 +341,7 @@ besedil IDLE kopiraj spodnjo programsko kodo.
 
     GPIO.setmode<span style="color: #4f97d7;">(</span>GPIO.BOARD<span style="color: #4f97d7;">)</span>
     <span style="color: #4f97d7; font-weight: bold;">for</span> pin <span style="color: #4f97d7; font-weight: bold;">in</span> pins:
+        GPIO.setup<span style="color: #4f97d7;">(</span>pin, GPIO.OUT<span style="color: #4f97d7;">)</span>
         GPIO.output<span style="color: #4f97d7;">(</span>pin, GPIO.HIGH<span style="color: #4f97d7;">)</span>
         <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'Ugasnjen pin'</span>, pin<span style="color: #4f97d7;">)</span>
 
@@ -368,12 +365,97 @@ besedil IDLE kopiraj spodnjo programsko kodo.
 </div>
 </div>
 </div>
+
+<div id="outline-container-org9c903f7" class="outline-3">
+<h3 id="org9c903f7"><span class="section-number-3">5.3</span> Utripanje lučk</h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+V glavnem delu programa omogoči utripanje vseh lučk. Kopiraj si preostali del
+programa in tega dopolni v delu programa <code>try</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">!/usr/bin/env python</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">-*- coding: utf-8 -*-</span>
+
+<span style="color: #4f97d7; font-weight: bold;">import</span> time
+<span style="color: #4f97d7; font-weight: bold;">import</span> RPi.GPIO <span style="color: #4f97d7; font-weight: bold;">as</span> GPIO
+
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Shranjevanje posameznih priklopov LED na GPIO v seznamu</span>
+
+<span style="color: #7590db;">pins</span> = <span style="color: #4f97d7;">[</span><span style="color: #a45bad;">7</span>, <span style="color: #a45bad;">11</span>, <span style="color: #a45bad;">12</span>, <span style="color: #a45bad;">13</span>, <span style="color: #a45bad;">15</span>, <span style="color: #a45bad;">16</span>, <span style="color: #a45bad;">18</span>, <span style="color: #a45bad;">22</span>,  <span style="color: #a45bad;">29</span>, <span style="color: #a45bad;">31</span><span style="color: #4f97d7;">]</span>
+
+<span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">nastavi</span><span style="color: #4f97d7;">()</span>:
+    <span style="color: #9f8766;">'''Nastavljanje za&#269;etnih nastavitev.'''</span>
+
+    GPIO.setmode<span style="color: #4f97d7;">(</span>GPIO.BOARD<span style="color: #4f97d7;">)</span>
+    <span style="color: #4f97d7; font-weight: bold;">for</span> pin <span style="color: #4f97d7; font-weight: bold;">in</span> pins:
+        GPIO.setup<span style="color: #4f97d7;">(</span>pin, GPIO.out<span style="color: #4f97d7;">)</span>
+
+    ugasni_vse<span style="color: #4f97d7;">()</span>
+
+<span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">pocisti</span><span style="color: #4f97d7;">()</span>:
+    <span style="color: #9f8766;">'''Pocisti za konec programa.'''</span>
+    ugasni_vse<span style="color: #4f97d7;">()</span>
+    GPIO.cleanup<span style="color: #4f97d7;">()</span>
+
+<span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">prizgi_vse</span><span style="color: #4f97d7;">()</span>:
+    <span style="color: #4f97d7; font-weight: bold;">for</span> pin <span style="color: #4f97d7; font-weight: bold;">in</span> pins:
+        GPIO.output<span style="color: #4f97d7;">(</span>pin, GPIO.LOW<span style="color: #4f97d7;">)</span>
+        <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'Prizgan pin'</span>, pin<span style="color: #4f97d7;">)</span>
+
+<span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">ugasni_vse</span><span style="color: #4f97d7;">()</span>:
+    <span style="color: #4f97d7; font-weight: bold;">for</span> pin <span style="color: #4f97d7; font-weight: bold;">in</span> pins:
+        GPIO.output<span style="color: #4f97d7;">(</span>pin, GPIO.HIGH<span style="color: #4f97d7;">)</span>
+        <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">'Ugasnjen pin'</span>, pin<span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">try</span>:
+    nastavi<span style="color: #4f97d7;">()</span>
+    <span style="color: #4f97d7; font-weight: bold;">while</span> <span style="color: #a45bad;">True</span>:
+        <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Dopolni program tako, da bodo utripale vse lu&#269;ke.</span>
+        <span style="color: #4f97d7; font-weight: bold;">pass</span>
+<span style="color: #4f97d7; font-weight: bold;">except</span> <span style="color: #ce537a; font-weight: bold;">KeyboardInterrupt</span>:
+    pocisti<span style="color: #4f97d7;">()</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge79e58a" class="outline-3">
+<h3 id="orge79e58a"><span class="section-number-3">5.4</span> Podprogram za prižiganje posamezne lučke</h3>
+<div class="outline-text-3" id="text-5-4">
+<p>
+Napisali smo podprograme za prižiganje vseh lučk, kako bomo prižgali
+posamezno lučko, katere pin smo zapisali v seznamu. 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">prizgi_LED</span><span style="color: #4f97d7;">(</span>n<span style="color: #4f97d7;">)</span>:
+    <span style="color: #4f97d7; font-weight: bold;">if</span> n &lt; <span style="color: #4f97d7;">len</span><span style="color: #4f97d7;">(</span>pins<span style="color: #4f97d7;">)</span>:
+        GPIO.output<span style="color: #4f97d7;">(</span>pins<span style="color: #bc6ec5;">[</span>n<span style="color: #bc6ec5;">]</span>, GPIO.HIGH<span style="color: #4f97d7;">)</span>
+    <span style="color: #4f97d7; font-weight: bold;">else</span>:
+</pre>
+</div>
+
+<p>
+Napišimo še podprogram, ki ugasne posamezno LED. 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">ugasni_LED</span><span style="color: #4f97d7;">(</span>n<span style="color: #4f97d7;">)</span>:
+    <span style="color: #4f97d7; font-weight: bold;">if</span> n &lt; <span style="color: #4f97d7;">len</span><span style="color: #4f97d7;">(</span>pins<span style="color: #4f97d7;">)</span>:
+        GPIO.output<span style="color: #4f97d7;">(</span>pins<span style="color: #bc6ec5;">[</span>n<span style="color: #bc6ec5;">]</span>, GPIO.LOW<span style="color: #4f97d7;">)</span>
+    <span style="color: #4f97d7; font-weight: bold;">else</span>:
+        <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span>n, <span style="color: #2d9574;">"presega stevilo priklopljenih luck."</span><span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Datum: 09.05.2018</p>
 <p class="author">Avtor: Gregor Nemec</p>
-<p class="date">Ustvarjeno: 2018-05-09 sre 13:25</p>
+<p class="date">Ustvarjeno: 2018-05-23 sre 12:13</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
