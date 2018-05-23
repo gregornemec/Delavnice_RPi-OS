@@ -13,7 +13,7 @@ def nastavi():
 
     GPIO.setmode(GPIO.BOARD)
     for pin in pins:
-        GPIO.setup(pin, GPIO.out)
+        GPIO.setup(pin, GPIO.OUT)
 
     ugasni_vse()
 
@@ -39,7 +39,7 @@ def ugasni_vse():
 def prizgi_LED(n):
     '''Prizge n-to led v seznamu.'''
     if n < len(pins):
-        GPIO.output(pins[n], GPIO.HIGH)
+        GPIO.output(pins[n], GPIO.LOW)
     else:
         print(n, "presega stevilo priklopljenih luck.")
 
@@ -47,7 +47,7 @@ def prizgi_LED(n):
 def ugasni_LED(n):
     '''Ugasne n-to led v seznamu.'''
     if n < len(pins):
-        GPIO.output(pins[n], GPIO.LOW)
+        GPIO.output(pins[n], GPIO.HIGH)
     else:
         print(n, "presega stevilo priklopljenih luck.")
 
@@ -55,15 +55,17 @@ def ugasni_LED(n):
 def tekoce_LED_naprej():
     for n in range(len(pins)):
         prizgi_LED(n)
+        prizgi_LED(n+1)
         time.sleep(0.2)
         ugasni_LED(n)
-
+        ugasni_LED(n+1)
 
 try:
     nastavi()
     while True:
         # Dopolni program tako, da bodo utripale vse lučke.
         tekoce_LED_naprej()
+        time.sleep(0.2)
 
 except KeyboardInterrupt:
     pocisti()
