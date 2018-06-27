@@ -20,41 +20,45 @@
   Pri projektu bomo potrebovali:
   * 1x prototipna plošča,
   * 1x razširitev in podaljševalni kabel GPIO pinov,
-  * 5x LED dioda (2x rdeča, 2x zelena, 1x rdeča),
-  * 5x $220 \Ohm$ upornik,
+  * 5x LED dioda (2x rdeča, 2x zelena, 1x rumena),
+  * 5x $220 \Omega$ upornik,
   * 1x piskač (buzzer)
   * 1x gumb,
   * več veznih žičk različnih barv.
 
-* Vezje
-  Na spodnji sliki je končna slika ciljnega vezja signalizacije. 
-  
-  #+CAPTION: Končna slika vezja z vsemi elementi
-  #+NAME:   fig:REB_sem
-  [[file:breadboard/REB_RES_3LEDsem_2LED_sem_BT_BUZ_bb.png]]
+* Priklop Raspbery-Pi
+   #+CAPTION: Priklop naprav na Raspbery Pi
+   #+NAME:   fig:rpi_io
+   [[file:images/rpi_IO.png]]
+   
+* Spoznavanje Pixle in IDLE
+  V tem delu bomo spoznali uporabniški vmesnik *PIXLE* in urejevalnik besedil
+  za programiranje *Thonny*.
 
 * Koraki izdelave
+  Sedaj ko smo spoznali sam kartični računalnik se lahko lotimo sestavljanja
+  našega projekta prometne signalizacije. Sestavili bomo vezje, spoznali bomo
+  elektrotehnične elemente ter posamezne elemente krmilili s programskim jezikom
+  [[https://www.python.org/][Python]].
 
-** Priklop Raspbery-Pi
-   
-** Spoznavanje Pixle in IDLE
-   V tem delu bomo spoznali uporabniški vmesnik *PIXLE* in urejevalnik besedil
-   za programiranje *Thonny*.
+** Vezje
+   Na spodnji sliki je končna slika ciljnega vezja signalizacije. 
+  
+   #+CAPTION: Končna slika vezja z vsemi elementi
+   #+NAME:   fig:REB_sem
+   [[file:breadboard/REB_RES_3LEDsem_2LED_sem_BT_BUZ_bb.png]]
 
 ** Spoznavanje elektrotehničnih elementov
-   
-*** Prototipna ploščica
-
-*** Upornik 
-
-*** LED dioda
-
-*** Stikalo
-
-*** Piskač
-
+   # ToDO: Naredi podroben opis posameznih el. elementov. 
+   * Prototipna ploščica
+   * Upornik
+   * LED dioda
+   * Stikalo
+   * Piskač
 
 ** GPIO
+   GPIO je večnamenski vmesnik za vhodno izhodne narave. Podroben opis
+   posameznih pinov najdemo na spletni strani https://pinout.xyz/. 
 
 ** Priklop razširitvenega priklopa na prototipno ploščico in R-Piska
    Pred sabo imaš prototipno ploščico in na njo vključen razširitveni priklop.
@@ -72,11 +76,10 @@
 *** Programska koda
     Za delovanje programa bomo potrebovali dve zunanjivi knjižnici *gpiozero* in
     *time*. *gpiozreo* bo poskrbela da bomo lahko prižigali in ugašali lučke.
-    Knjižnica *time* bo poskrbela za pavze. V programu za urejanje programske
-    kode odpri datoteko semafor_pesci_zacetek.py. V *Thonny* odprite spodnjo
-    datoteko.
+    Knjižnica *time* bo poskrbela za pavze. Odpremo program za urejanje besedil
+    Python IDLE 3 ali Thonny. Kopiramo spodnjo programsko kodo v urejevalnik. 
 
-    *DATOTEKA*: =code/01_led.py=
+    # *DATOTEKA*: =code/01_led.py=
 
     #+BEGIN_SRC python
       import gpiozero
@@ -111,6 +114,7 @@
     1. Naredi inicializacijo dveh spremenljivka za dve LED diodi, eno za zeleno
        in drugo za rdečo.
     2. V =while True:= zanko zapiši delovanje semaforja v naslednjih korakih: 
+       #+BEGIN_SRC 
        rdeča prižgana
        zelena ugasnjena
        počakaj 3 s
@@ -118,10 +122,14 @@
        rdeča ugasnjena
        zelena prižgana
        počakaj 1 s
+       #+END_SRC
 
-    *DATOTEKA*: =code/02_semafor_pesci.py=
-       
-    #+BEGIN_SRC python
+    #    *DATOTEKA*: =code/02_semafor_pesci.py=
+    
+    Poskusi narediti sam po zgornjih napotkih, spodnja programska koda naj ti po
+    le v pomoč, če ti ne bo šlo.
+
+#+BEGIN_SRC python
       #inicializacija semafor pešci
       p_zelena = gpiozero.LED(5)
       p_rdeca = gpiozero.LED(6)
@@ -136,7 +144,7 @@
           time.sleep(1)
     #+END_SRC       
 
-** Semafor za avtomobile (3x led zaporedno)
+** Semafor za avtomobile (3x led vzporedno)
    K obstoječemu vezju dodamo vezje semaforja za avtomobile.
    
 *** Vezje
@@ -204,9 +212,6 @@
    Sedaj imamo priklopljene vse elemente. Napisati moramo samo še program, ki 
    bo poganjal simulacijo semaforja. 
 
-*** Programska koda
-   
-
 *** Vezje
     #+CAPTION: Končna vezava vseh elementov. 
     #+NAME:   fig:REB_sem
@@ -233,6 +238,7 @@
        #Inicializacija piskača
        zvok = gpiozero.Buzzer(20)
        #Inicializacija gumba
+
        gumb = gpiozero.Button(21)
 
        def prehod():
@@ -274,6 +280,7 @@
                 prehod()
 
     #+END_SRC
+
 
 * Viri in Literatura
   1. Gregor Anželj, *Prometna signalizacija*, 
