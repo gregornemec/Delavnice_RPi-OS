@@ -60,6 +60,20 @@ def tekoce_LED_naprej():
         ugasni_LED(n)
         ugasni_LED(n+1)
 
+def sode_on():
+    for n in range(len(pins)):
+        if n%2 == 0:
+            prizgi_LED(n)
+        else:
+            ugasni_LED(n)
+
+def lihe_on():
+    for n in range(len(pins)):
+        if n%2 == 1:
+            prizgi_LED(n)
+        else:
+            ugasni_LED(n)
+
 try:
     nastavi()
     while True:
@@ -67,7 +81,12 @@ try:
         tekoce_LED_naprej()
         time.sleep(0.2)
         prizgi_vse()
-        time.sleep(0.1)
+        time.sleep(0.2)
         ugasni_vse()
+        sode_on()
+        time.sleep(0.2)
+        lihe_on()
+        time.sleep(0.2)
+
 except KeyboardInterrupt:
     pocisti()
