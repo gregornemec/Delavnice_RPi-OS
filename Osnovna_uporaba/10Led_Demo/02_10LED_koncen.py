@@ -53,7 +53,11 @@ def ugasni_LED(n):
 
 
 def tekoce_LED_naprej():
+<<<<<<< HEAD
     for n in range(len(pins)-1):
+=======
+    for n in range(len(pins)):
+>>>>>>> Delavnice_RPi-OS/master
         prizgi_LED(n)
 
         time.sleep(0.2)
