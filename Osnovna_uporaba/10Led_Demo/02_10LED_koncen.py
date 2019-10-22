@@ -6,7 +6,7 @@ import RPi.GPIO as GPIO
 
 # Shranjevanje posameznih priklopov LED na GPIO v seznamu
 
-pins = [7, 11, 13, 15, 12, 16, 18, 22]
+pins = [7, 11, 13, 15, 12, 16, 18, 29]
 
 def nastavi():
     '''Nastavljanje začetnih nastavitev.'''
@@ -66,6 +66,8 @@ try:
         # Dopolni program tako, da bodo utripale vse lučke.
         tekoce_LED_naprej()
         time.sleep(0.2)
-
+        prizgi_vse()
+        time.sleep(0.1)
+        ugasni_vse()
 except KeyboardInterrupt:
     pocisti()
