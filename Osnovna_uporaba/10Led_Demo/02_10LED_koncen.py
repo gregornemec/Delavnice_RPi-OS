@@ -87,6 +87,11 @@ try:
         time.sleep(0.2)
         lihe_on()
         time.sleep(0.2)
+        sode_on()
+        time.sleep(0.2)
+        lihe_on()
+        time.sleep(0.2)
+        ugasni_vse()
 
 except KeyboardInterrupt:
     pocisti()
